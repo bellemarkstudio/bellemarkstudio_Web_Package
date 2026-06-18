@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellemark Systems: Premium Package</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+@media print {
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+}
+
+body { font-family: 'Segoe UI', system-ui, Arial, sans-serif; background: #ffffff; color: #1a1a2e; }
+
+/* HERO */
+.hero { background: #0f1923; padding: 28px 20px 36px; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: #38bdf8; }
+.hero-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 10px; }
+.brand { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #ffffff; }
+.hero-right { display: flex; align-items: center; gap: 12px; }
+.hero-url { display: none; }
+.badge { background: transparent; border: 1.5px solid #38bdf8; color: #38bdf8; font-size: 9px; font-weight: 700; letter-spacing: 2px; padding: 6px 12px; border-radius: 3px; }
+.hero h1 { font-size: 28px; font-weight: 800; color: #ffffff; line-height: 1.15; margin-bottom: 16px; }
+.hero h1 span { color: #38bdf8; }
+.hero-sub { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; }
+
+/* PAIN BAND */
+.pain-band { background: #162030; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center; border-top: 1px solid rgba(56,189,248,0.12); border-bottom: 1px solid rgba(56,189,248,0.12); }
+.pain-stat { text-align: center; }
+.pain-num { font-size: 52px; font-weight: 900; color: #38bdf8; line-height: 1; }
+.pain-sub { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 6px; letter-spacing: 1.5px; font-weight: 600; }
+.pain-divider { width: 48px; height: 1px; background: rgba(56,189,248,0.18); }
+.pain-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.75; text-align: left; }
+.pain-desc strong { color: #ffffff; font-weight: 700; }
+
+/* SECTIONS */
+.section { padding: 36px 20px; border-bottom: 1px solid #e8ecf0; }
+.section-label { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: #38bdf8; margin-bottom: 10px; text-transform: uppercase; }
+.section h2 { font-size: 22px; font-weight: 800; color: #0f1923; margin-bottom: 28px; }
+
+/* CARDS - mobile first: single column */
+.cards { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.card { border: 1px solid #dde3ea; border-radius: 8px; padding: 20px; position: relative; }
+.card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: #38bdf8; border-radius: 8px 8px 0 0; opacity: 0.5; }
+.card-num { font-size: 10px; font-weight: 700; color: #38bdf8; letter-spacing: 2px; margin-bottom: 12px; text-transform: uppercase; }
+.card h3 { font-size: 15px; font-weight: 700; color: #0f1923; margin-bottom: 8px; }
+.card p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+/* STEPS - mobile first: single column */
+.steps { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 8px; }
+.steps::before { display: none; }
+.step { text-align: left; padding: 0; display: flex; gap: 16px; align-items: flex-start; }
+.step-num { width: 42px; height: 42px; min-width: 42px; border-radius: 50%; border: 1.5px solid #38bdf8; color: #38bdf8; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; background: #ffffff; }
+.step-content h4 { font-size: 14px; font-weight: 700; color: #0f1923; margin-bottom: 6px; }
+.step-content p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+/* PRICING */
+.pricing-box { background: #f4f8ff; border: 1px solid #c7dcf8; border-radius: 10px; padding: 28px 20px; display: flex; flex-direction: column; gap: 0; }
+.pricing-left { padding-bottom: 24px; border-bottom: 1px solid #c7dcf8; }
+.pricing-left .lead { font-size: 14px; color: #374151; font-weight: 600; margin-bottom: 16px; line-height: 1.6; }
+.include-item { display: flex; align-items: center; gap: 10px; font-size: 13px; color: #4b5563; margin-bottom: 10px; line-height: 1.5; }
+.include-item::before { content: '✓'; color: #38bdf8; font-weight: 700; flex-shrink: 0; }
+.pricing-right { padding-top: 24px; }
+.expect-title { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #94a3b8; text-transform: uppercase; margin-bottom: 14px; }
+.expect-item { font-size: 13px; color: #374151; padding: 9px 0; border-bottom: 1px solid #dde8f5; line-height: 1.4; }
+.expect-item:last-of-type { border-bottom: none; }
+.pricing-note { margin-top: 16px; font-size: 12px; color: #38bdf8; font-weight: 600; line-height: 1.6; }
+
+/* TRUST - mobile first: single column */
+.trust-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+.trust-item { padding: 24px 20px; border: 1px solid #dde3ea; border-radius: 8px; }
+.trust-icon-wrap { width: 40px; height: 40px; border-radius: 8px; background: #f0f7ff; border: 1px solid #c7dcf8; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+.trust-icon-wrap svg { width: 20px; height: 20px; }
+.trust-item h4 { font-size: 14px; font-weight: 700; color: #0f1923; margin-bottom: 8px; }
+.trust-item p { font-size: 13px; color: #6b7280; line-height: 1.65; }
+
+/* CHOA */
+.choa-section { background: #f8faff; padding: 36px 20px; border-top: 1px solid #e8ecf0; }
+.choa-section h2 { font-size: 22px; font-weight: 800; color: #0f1923; margin: 10px 0 24px; }
+.choa-inner { display: flex; flex-direction: column; gap: 24px; }
+.choa-lead { font-size: 15px; color: #1f2937; line-height: 1.8; margin-bottom: 14px; }
+.choa-lead strong { color: #0f1923; }
+.choa-body { font-size: 13px; color: #6b7280; line-height: 1.8; }
+.choa-card { background: #0f1923; border-radius: 10px; padding: 32px 24px; text-align: center; border: 1px solid rgba(56,189,248,0.15); }
+.choa-pct { font-size: 52px; font-weight: 900; color: #38bdf8; line-height: 1; }
+.choa-pct-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,0.35); margin-top: 8px; text-transform: uppercase; }
+.choa-divider { width: 32px; height: 1px; background: rgba(255,255,255,0.25); margin: 18px auto; }
+.choa-org { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; color: rgba(255,255,255,0.7); text-transform: uppercase; line-height: 1.6; }
+
+/* CTA */
+.cta-band { background: #0f1923; padding: 36px 20px; display: flex; flex-direction: column; gap: 24px; }
+.cta-left h3 { font-size: 20px; font-weight: 800; color: #ffffff; margin-bottom: 8px; }
+.cta-left p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.7; }
+.cta-right { text-align: left; }
+.cta-url { font-size: 16px; font-weight: 800; color: #38bdf8; display: block; margin-bottom: 6px; text-decoration: none; }
+.cta-contact { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; }
+
+/* FOOTER */
+.footer { background: #090e14; padding: 16px 20px; display: flex; flex-direction: column; gap: 6px; text-align: center; border-top: 1px solid rgba(56,189,248,0.08); }
+.footer-brand { font-size: 10px; font-weight: 700; letter-spacing: 3px; color: rgba(255,255,255,0.2); }
+.footer-url { font-size: 11px; color: rgba(56,189,248,0.4); text-decoration: none; }
+.footer-tagline { font-size: 10px; color: rgba(255,255,255,0.15); letter-spacing: 1px; }
+
+/* DESKTOP */
+@media (min-width: 769px) {
+  .hero { padding: 44px 64px 56px; }
+  .hero-top { margin-bottom: 44px; flex-wrap: nowrap; }
+  .hero-url { display: block; font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 1px; text-decoration: none; }
+  .hero-url:hover { color: #38bdf8; }
+  .badge { font-size: 10px; padding: 7px 16px; }
+  .hero h1 { font-size: 50px; line-height: 1.08; }
+  .hero-sub { font-size: 15px; max-width: 540px; }
+
+  .pain-band { flex-direction: row; padding: 36px 64px; text-align: left; gap: 44px; }
+  .pain-divider { width: 1px; height: 64px; }
+  .pain-num { font-size: 60px; }
+  .pain-desc { font-size: 15px; }
+
+  .section { padding: 56px 64px; }
+  .section h2 { font-size: 26px; margin-bottom: 36px; }
+
+  .cards { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .card { padding: 28px 24px; }
+
+  .steps { grid-template-columns: repeat(3, 1fr); gap: 0; position: relative; }
+  .steps::before { content: ''; display: block; position: absolute; top: 21px; left: 16.67%; right: 16.67%; height: 1px; background: #dde3ea; }
+  .step { flex-direction: column; text-align: center; padding: 0 24px; align-items: center; }
+  .step-num { margin-bottom: 18px; position: relative; z-index: 1; }
+
+  .pricing-box { flex-direction: row; padding: 40px 44px; align-items: stretch; }
+  .pricing-left { flex: 3; padding-right: 44px; padding-bottom: 0; border-right: 1px solid #c7dcf8; border-bottom: none; }
+  .pricing-right { flex: 2; padding-left: 44px; padding-top: 0; justify-content: center; display: flex; flex-direction: column; }
+
+  .trust-row { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .trust-item { padding: 32px 24px; }
+
+  .choa-section { padding: 56px 64px; }
+  .choa-section h2 { font-size: 26px; }
+  .choa-inner { flex-direction: row; gap: 48px; align-items: stretch; }
+  .choa-copy { flex: 3; }
+  .choa-card { flex: 1.5; padding: 36px 28px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .choa-pct { font-size: 56px; }
+
+  .cta-band { flex-direction: row; justify-content: space-between; align-items: center; padding: 48px 64px; }
+  .cta-left h3 { font-size: 22px; }
+  .cta-right { text-align: right; flex-shrink: 0; }
+  .cta-url { font-size: 17px; }
+
+  .footer { flex-direction: row; justify-content: space-between; align-items: center; padding: 18px 64px; text-align: left; }
+  .footer-right { display: flex; align-items: center; gap: 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-top">
+    <div class="brand">BELLEMARK SYSTEMS</div>
+    <div class="hero-right">
+      <a href="https://bellemarkstudio.com" class="hero-url" target="_blank">bellemarkstudio.com</a>
+      <div class="badge">PREMIUM PACKAGE</div>
+    </div>
+  </div>
+  <h1>You're losing customers<br>on the phone <span>and on your website</span><br>every single day.</h1>
+  <p class="hero-sub">Bellemark installs the full system: call handling, website chat, booking, and lead capture, so every channel is covered and every lead gets converted, not just collected.</p>
+</div>
+
+<div class="pain-band">
+  <div class="pain-stat">
+    <div class="pain-num">62%</div>
+    <div class="pain-sub">OF CALLERS WON'T CALL BACK</div>
+  </div>
+  <div class="pain-divider"></div>
+  <div class="pain-desc">
+    It's not just missed calls. <strong>Website visitors who don't see a way to reach you leave in seconds, and most never come back.</strong> That's a $3,000 to $15,000 job lost on the phone, and another lost on your site before they even called. Bellemark covers both, automatically.
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">WHAT WE INSTALL</div>
+  <h2>Every channel covered. One setup. Runs automatically.</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-num">01 · MISSED-CALL TEXT-BACK</div>
+      <h3>Never lose a caller again</h3>
+      <p>The moment a call goes unanswered, your system texts the customer within seconds, keeping them engaged until you're free to talk.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">02 · AI RECEPTIONIST</div>
+      <h3>Handle every inbound call</h3>
+      <p>A live AI agent answers calls you can't get to, collects the caller's name, number, and what they need, and logs it straight to your pipeline.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">03 · WEBSITE CHAT WIDGET</div>
+      <h3>Capture leads around the clock</h3>
+      <p>Your chat widget answers questions, collects contact info, and qualifies visitors 24/7, even while you're on a job site.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">04 · APPOINTMENT BOOKING</div>
+      <h3>Let customers book themselves in</h3>
+      <p>Your chat widget and AI receptionist can book directly onto your calendar, so leads turn into scheduled jobs without you picking up the phone.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">05 · LEAD CAPTURE LANDING PAGE</div>
+      <h3>A page built to convert, not just inform</h3>
+      <p>A dedicated page for your ads and promotions, built around one goal: turning clicks into booked jobs.</p>
+    </div>
+    <div class="card">
+      <div class="card-num">06 · CRM + INSTANT ALERTS</div>
+      <h3>Every lead lands in your pocket</h3>
+      <p>Each call and message gets logged automatically and sent straight to your phone the moment it comes in. Nothing falls through the cracks.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">HOW IT WORKS</div>
+  <h2>Set up once. Works forever.</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>We build your system</h4>
+        <p>Custom-configured for your business, your hours, and your services. One-time setup, no tech skills required from you.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>It runs on its own</h4>
+        <p>Calls get answered, website visitors get engaged, and appointments get booked. You just show up to the jobs.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>You close more work</h4>
+        <p>You stop losing leads across every channel and start converting customers your competitors are missing.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">PRICING</div>
+  <h2>Everything you need to capture, book, and convert.</h2>
+  <div class="pricing-box">
+    <div class="pricing-left">
+      <p class="lead">The Premium Package includes everything in Standard, plus:</p>
+      <div class="include-item">Missed-call text-back system</div>
+      <div class="include-item">AI receptionist setup</div>
+      <div class="include-item">24/7 website chat widget</div>
+      <div class="include-item">Appointment booking with live calendar sync</div>
+      <div class="include-item">Dedicated lead capture landing page</div>
+      <div class="include-item">CRM pipeline with instant lead notifications</div>
+      <div class="include-item">Ongoing support and monitoring</div>
+    </div>
+    <div class="pricing-right">
+      <div class="expect-title">What to expect</div>
+      <div class="expect-item">$1,200 one-time setup fee</div>
+      <div class="expect-item">$997 per month</div>
+      <div class="expect-item">Cancel anytime</div>
+      <div class="expect-item">No long-term contracts</div>
+      <p class="pricing-note">Optional add-on: automated lead follow-up sequences for $150 per month.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-label">WHY BELLEMARK</div>
+  <h2>Built for contractors. Not corporate offices.</h2>
+  <div class="trust-row">
+    <div class="trust-item">
+      <div class="trust-icon-wrap">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="10" r="9" stroke="#38bdf8" stroke-width="1.5"/>
+          <path d="M10 5v5l3 3" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h4>Runs while you work</h4>
+      <p>Your system is active 24/7, capturing leads while you're on roofs, in crawl spaces, or finishing a job.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4" y="3" width="12" height="14" rx="2" stroke="#38bdf8" stroke-width="1.5"/>
+          <path d="M7 7h6M7 10h6M7 13h4" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h4>No contracts</h4>
+      <p>Month-to-month only. If it's not working for you, cancel. No fine print, no cancellation fees.</p>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon-wrap">
+        <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="2" width="10" height="16" rx="2" stroke="#38bdf8" stroke-width="1.5"/>
+          <circle cx="10" cy="15" r="1" fill="#38bdf8"/>
+          <path d="M8 5h4" stroke="#38bdf8" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h4>Everything goes to your phone</h4>
+      <p>New leads, missed call alerts, and booked appointments notify you instantly, no dashboard to log into, no software to learn.</p>
+    </div>
+  </div>
+</div>
+
+<div class="choa-section">
+  <div class="section-label">GIVING BACK</div>
+  <h2>Every client helps a child get better care.</h2>
+  <div class="choa-inner">
+    <div class="choa-copy">
+      <p class="choa-lead"><strong>5% of every monthly payment goes directly to Children's Healthcare of Atlanta (CHOA),</strong> one of the top-ranked pediatric hospital systems in the country.</p>
+      <p class="choa-body">When you work with Bellemark, you're not just investing in your business. A portion of what you pay every month goes toward children who need medical care. There's no extra cost to you and no action required. It happens automatically with every payment.</p>
+    </div>
+    <div class="choa-card">
+      <div class="choa-pct">5%</div>
+      <div class="choa-pct-label">of every monthly payment</div>
+      <div class="choa-divider"></div>
+      <div class="choa-org">Children's Healthcare<br>of Atlanta</div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-band">
+  <div class="cta-left">
+    <h3>Book a free 15-minute demo.</h3>
+    <p>We'll show you exactly what your system would look like, built around your business, before you spend a dollar.</p>
+  </div>
+  <div class="cta-right">
+    <a href="https://bellemarkstudio.com" class="cta-url" target="_blank">bellemarkstudio.com</a>
+    <div class="cta-contact">678-630-1321 &nbsp;·&nbsp; bellemarkstudio@gmail.com</div>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">BELLEMARK SYSTEMS</div>
+  <div class="footer-right">
+    <a href="https://bellemarkstudio.com" class="footer-url" target="_blank">bellemarkstudio.com</a>
+    <div class="footer-tagline">AUTOMATED LEAD CAPTURE &amp; CUSTOMER RESPONSE</div>
+  </div>
+</div>
+
+</body>
+</html>
