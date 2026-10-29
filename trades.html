@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bellemark Studio for Local Service Businesses</title>
+<meta name="description" content="Missed call text back, a CRM and a website for plumbers, HVAC, roofers and other trades. Packages and pricing.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800;900&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FFFFFF;--alt:#F4F8FC;--ink:#0E1A27;--muted:#55657A;--line:#DDE5EE;--blue:#1BA8F0;--blue-ink:#0A7FBF;--card:#FFFFFF;--cardtop:#BFE6FB;--dark:#0E1A27;--dark2:#12233A;--dark3:#18304D;--dark-ink:#F2F6FA;--dark-muted:#98A8BA;--red:#E5534B;--green:#2FB67C;--amber:#E8A33D;--head:'Archivo','Arial Black',Arial,sans-serif;--body:'Public Sans',system-ui,Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1420;--alt:#0F1B2B;--ink:#EAF0F6;--muted:#9BAABB;--line:#22344A;--blue:#38BDF8;--blue-ink:#38BDF8;--card:#122033;--cardtop:#1E4A6B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1420;--alt:#0F1B2B;--ink:#EAF0F6;--muted:#9BAABB;--line:#22344A;--blue:#38BDF8;--blue-ink:#38BDF8;--card:#122033;--cardtop:#1E4A6B;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}
+img{max-width:100%}[hidden]{display:none!important}
+.in{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--head);margin:0;line-height:1.08;text-wrap:balance}
+.eye{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-ink);margin:0 0 10px}
+.dark{background:var(--dark);color:var(--dark-ink)}.dark .eye{color:var(--blue)}
+.top{border-top:3px solid var(--blue)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:22px}
+.brand{font-weight:600;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase}
+.tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);padding:8px 14px;border-radius:3px;text-decoration:none}
+.tag:hover{background:var(--blue);color:#06121D}
+.brand,.tag{white-space:nowrap}
+@media(max-width:480px){.brand{letter-spacing:.16em}.tag{padding:8px 10px;letter-spacing:.1em}}
+.hero{padding-block:28px 72px;display:grid;gap:40px;align-items:center}
+.hero .forown{margin:0 0 14px;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-muted)}
+.hero h1{font-weight:900;font-size:clamp(2.2rem,6.2vw,3.7rem);letter-spacing:-.015em}
+.hero h1 em{font-style:normal;color:var(--blue)}
+.hero p.l{color:var(--dark-muted);max-width:50ch;margin:20px 0 0;font-size:1.06rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--blue);color:#06121D;font-family:var(--head);font-weight:800;text-decoration:none;border-radius:4px;border:0;font-size:1rem;cursor:pointer}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--dark-ink);border:1.5px solid #2c4666}
+.acts{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+.acts small{color:var(--dark-muted);font-size:.88rem;width:100%}
+/* phone mockup */
+.phone{background:#0A121C;border:1px solid #243955;border-radius:26px;padding:16px;max-width:380px;width:100%;margin-inline:auto;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.ph-top{display:flex;justify-content:space-between;align-items:center;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dark-muted);padding:2px 4px 12px}
+.live{display:inline-flex;gap:6px;align-items:center;color:var(--green)}
+.live i{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ph-note{background:var(--dark3);border-radius:12px;padding:12px 14px;font-size:.84rem;color:#C9D5E2;margin-bottom:10px}
+.ph-note b{color:#fff;display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:4px}
+.ph-card{background:var(--dark2);border:1px solid #243955;border-left:4px solid var(--red);border-radius:12px;padding:14px;margin-bottom:10px}
+.ph-card.n{border-left-color:var(--green)}.ph-card.e{border-left-color:var(--blue)}
+.ph-card .t{display:flex;justify-content:space-between;gap:8px;font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--dark-muted)}
+.ph-card .t strong{color:var(--red)}.ph-card.n .t strong{color:var(--green)}.ph-card.e .t strong{color:var(--blue)}
+.ph-card h4{font-size:.98rem;margin:6px 0 4px;color:#fff}
+.ph-card p{margin:0;color:#B7C5D6;font-size:.84rem;line-height:1.45}
+.ph-foot{font-size:.7rem;color:var(--dark-muted);text-align:center;margin:8px 0 2px}
+/* strip */
+.strip{background:var(--dark2);border-block:1px solid #1d3350;padding-block:26px}
+.strip .row{display:grid;gap:18px;color:#C9D5E2;font-size:.95rem}
+.strip b{display:block;color:#fff;font-family:var(--head);font-size:1.05rem;margin-bottom:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 4px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.86rem;color:var(--muted);background:var(--card)}
+section.s{padding-block:72px;border-top:1px solid var(--line)}
+section.s.alt{background:var(--alt)}
+section.s h2{font-weight:800;font-size:clamp(1.6rem,4vw,2.3rem);margin-bottom:12px;max-width:24ch;letter-spacing:-.01em}
+section.s .sub{color:var(--muted);max-width:60ch;margin:0 0 30px}
+.grid3{display:grid;gap:14px}.grid2{display:grid;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--cardtop);border-radius:6px;padding:22px}
+.card .n{font-size:.66rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue-ink)}
+.card h3{font-size:1.08rem;font-weight:800;margin:8px 0 6px}
+.card p{margin:0;color:var(--muted);font-size:.93rem}
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.tab{min-height:46px;padding:0 18px;border:1.5px solid var(--ink);border-radius:999px;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.demo{display:grid;gap:16px}
+.pane{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px}
+.pane .lab,.lab{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.bub{max-width:88%;padding:10px 14px;border-radius:14px;font-size:.93rem;margin:0 0 8px}
+.bub.c{background:var(--alt);border:1px solid var(--line);border-bottom-left-radius:4px}
+.bub.a{margin-left:auto;background:var(--blue);color:#06121D;border-bottom-right-radius:4px}
+.out{border-left:4px solid var(--blue);}
+.out h4{font-size:1.1rem;margin:4px 0 8px}
+.out dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:0;font-size:.93rem}
+.out dt{color:var(--muted)}.out dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.badge{display:inline-block;font-size:.66rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:#06121D}
+.fine{color:var(--muted);font-size:.85rem;margin:14px 0 0}
+/* calc */
+.calc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:24px;display:grid;gap:22px}
+.fld label{display:flex;justify-content:space-between;gap:12px;font-weight:600;margin-bottom:6px}
+.fld output{color:var(--blue-ink);font-family:var(--head);font-weight:800}
+.fld input{width:100%;accent-color:var(--blue);min-height:44px}
+.res{background:var(--dark);color:var(--dark-ink);border-radius:10px;padding:24px}
+.res .lab{color:var(--dark-muted)}
+.res .big{font-family:var(--head);font-weight:900;font-size:clamp(2.4rem,7vw,3.4rem);color:var(--blue);line-height:1}
+.res p{margin:10px 0 0;color:#C9D5E2;font-size:.93rem}
+.steps{display:grid;gap:22px;position:relative}
+.step .c{width:38px;height:38px;border:1.5px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue-ink);font-weight:600;background:var(--alt);position:relative;z-index:1;margin-bottom:12px}
+.step h4{font-size:1.02rem;font-weight:800;margin-bottom:6px}.step p{margin:0;color:var(--muted);font-size:.93rem}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;display:grid;gap:30px}
+.panel h3{font-size:.95rem;font-weight:800;margin-bottom:14px}
+.ck{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ck li{display:flex;gap:10px;font-size:.95rem}.ck li::before{content:"\2713";color:var(--blue-ink);font-weight:600}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;min-height:54px;padding:14px 16px;display:flex;align-items:center;font-weight:600}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";margin-left:auto;color:var(--blue-ink);font-size:1.4rem}
+.faq details[open] summary::after{content:"\2212"}
+.faq details p{margin:0;padding:0 16px 16px;color:var(--muted)}
+.cta{padding-block:56px}.cta .row{display:grid;gap:22px;align-items:center}
+.cta h3{font-size:1.7rem;font-weight:800}.cta p{margin:8px 0 0;color:var(--dark-muted);max-width:46ch}
+.cta .r a.m{display:block;color:var(--blue);font-weight:800;font-family:var(--head);font-size:1.2rem;text-decoration:none}
+.cta .r span{display:block;color:var(--dark-muted);font-size:.9rem;margin-top:6px;overflow-wrap:anywhere}
+.foot{background:#08111B;color:var(--dark-muted);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:18px 0}
+.foot .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){.live i{animation:none}html{scroll-behavior:auto}}
+@media(min-width:860px){
+ .hero{grid-template-columns:1.1fr .9fr;gap:56px}
+ .strip .row{grid-template-columns:repeat(3,1fr);gap:30px}
+ .grid3{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:repeat(2,1fr)}
+ .demo{grid-template-columns:1fr 1fr;align-items:start}
+ .calc{grid-template-columns:1fr 1fr;align-items:center;gap:36px}
+ .steps{grid-template-columns:repeat(3,1fr);gap:28px}
+ .steps::before{content:"";position:absolute;left:19px;right:19px;top:19px;height:1px;background:var(--line)}
+ .panel{grid-template-columns:1.2fr 1fr;gap:44px}
+ .cta .row{grid-template-columns:1fr auto}.cta .r{text-align:right}
+}
+
+.price{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px;display:grid;gap:22px}
+.price.feat{border:2px solid var(--blue)}
+.price .pt{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-ink)}
+.price h3{font-size:1.5rem;font-weight:800;margin:6px 0 8px}
+.amt{display:flex;flex-wrap:wrap;gap:6px 26px;margin:6px 0 4px}
+.amt div{font-size:.8rem;color:var(--muted)}.amt b{display:block;font-family:var(--head);font-size:1.9rem;color:var(--ink);line-height:1.1}
+.mini{font-size:.9rem;color:var(--muted);margin:0}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);background:var(--alt);font-weight:600}
+tr:last-child td{border-bottom:0}
+.links{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px;font-size:.93rem}
+.phone .bub.c{background:#1b3250;color:#E6EEF7;border-color:#2c4666}
+@media(min-width:860px){.price.feat{grid-template-columns:1fr 1.1fr;gap:40px}}
+</style>
+</head>
+<body>
+<header class="dark top"><div class="in">
+  <div class="nav"><span class="brand">Bellemark Studio</span><span style="display:flex;gap:14px;align-items:center"><a href="index.html" style="font-size:.78rem;color:var(--dark-muted);text-decoration:none">Law firms</a><a class="tag" href="#book">Book a call</a></span></div>
+  <div class="hero">
+    <div>
+      <p class="forown">For local service businesses</p>
+      <h1>When you miss a call, the customer gets a <em>text back</em> before they call someone else.</h1>
+      <p class="l">Bellemark builds the system behind your phone: a website, a business number, a text sent the second you miss a call, and one place that keeps every lead. Built for plumbers, HVAC, roofers, electricians and other trades who are usually on a job when the phone rings.</p>
+      <div class="acts"><a class="btn" href="#book">Book a free 15 minute call</a><a class="btn ghost" href="#pricing">See pricing</a><small>We show you a sample built around your business before you spend a dollar.</small></div>
+    </div>
+    <div class="phone" role="img" aria-label="Sample text conversation after a missed call">
+      <div class="ph-top"><span>Example, made up business</span><span class="live"><i></i>Active</span></div>
+      <div class="ph-note"><b>Missed call</b>Caller (770) 555 0142 rang while the owner was under a house.</div>
+      <p class="bub a" style="margin-bottom:8px">Hi, this is the assistant for Ridgeline Plumbing. Sorry we missed your call. What do you need help with?</p>
+      <p class="bub c">Water heater is leaking in the garage</p>
+      <p class="bub a">Got it. I have passed that to the team and they will reach out as soon as they can. Can I get your address?</p>
+      <div class="ph-card n" style="margin-top:12px"><div class="t"><strong>New lead</strong><span>Saved to your CRM</span></div><h4>Water heater leak</h4><p>Name, number and the problem are recorded. You get a text alert.</p></div>
+      <p class="ph-foot">An automated assistant, not a person.</p>
+    </div>
+  </div>
+</div></header>
+
+<div class="strip"><div class="in"><div class="row">
+  <div><b>Missed call text back</b>The caller hears from you in seconds, not hours.</div>
+  <div><b>One place for every lead</b>A CRM with name, number, the problem and what happened next.</div>
+  <div><b>Reviews after the job</b>Customers get a text asking for a review when the work is done.</div>
+</div></div></div>
+
+<section class="s" id="calc"><div class="in">
+  <p class="eye">What a missed call costs</p>
+  <h2>Do the math on your own phone.</h2>
+  <p class="sub">Move the sliders to your numbers. This is an illustration with your inputs, not a promise of results.</p>
+  <div class="calc">
+    <div>
+      <div class="fld"><label for="c1">Calls you miss each week <output id="o1">6</output></label><input id="c1" type="range" min="1" max="30" value="6"></div>
+      <div class="fld" style="margin-top:18px"><label for="c2">Average job is worth <output id="o2">$450</output></label><input id="c2" type="range" min="100" max="5000" step="50" value="450"></div>
+      <div class="fld" style="margin-top:18px"><label for="c3">Share who would have booked with you <output id="o3">30%</output></label><input id="c3" type="range" min="5" max="80" step="5" value="30"></div>
+    </div>
+    <div class="res"><div class="lab">Work that may walk away each month</div><div class="big" id="big">$0</div><p id="cmp"></p></div>
+  </div>
+</div></section>
+
+<section class="s alt" id="pricing"><div class="in">
+  <p class="eye">Pricing</p>
+  <h2>One build fee. One monthly fee.</h2>
+  <p class="sub">Everything is listed with its price. No hidden fees. The written agreement is yours to read before you pay anything.</p>
+
+  <div class="price feat">
+    <div>
+      <div class="pt">Tier 2 · Most popular</div>
+      <h3>Customer Response System</h3>
+      <p class="mini">Everything in the website package, plus the tools that catch every lead when you cannot pick up.</p>
+      <div class="amt"><div>One time build<b>$1,350</b></div><div>Monthly<b>$650</b></div></div>
+      <p class="mini">3 month minimum, then month to month. Billed in two parts: the website part starts when your site goes live, the texting part starts when your business number is working.</p>
+      <p class="mini" style="margin-top:10px">Texting needs approval from phone carriers, which we do not control. The agreement explains what happens if it is rejected.</p>
+    </div>
+    <div><ul class="ck">
+      <li>Custom website, hosting and your domain</li>
+      <li>Business email on your domain</li>
+      <li>Missed call text back, with an AI assistant that replies by text</li>
+      <li>CRM that keeps every lead and customer in one place</li>
+      <li>Business number with a text alert to you for each new lead</li>
+      <li>Advanced chat assistant that saves customer details into your CRM</li>
+      <li>Review requests texted to customers after a job</li>
+      <li>5 changes a month and $60 of chat assistant usage included</li>
+    </ul></div>
+  </div>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="price">
+      <div><div class="pt">Tier 1 · Starter</div><h3>Website Package</h3>
+      <p class="mini">A real website that works on a phone, with a chat assistant that answers common questions at any hour.</p>
+      <div class="amt"><div>One time build<b>$500</b></div><div>Monthly<b>$150</b></div></div>
+      <p class="mini">3 month minimum, then month to month.</p></div>
+      <ul class="ck">
+        <li>Custom website, hosting and domain</li>
+        <li>24/7 chat assistant for common questions</li>
+        <li>Inquiry form sent to your email</li>
+        <li>3 changes a month and $20 of chat usage included</li>
+      </ul>
+    </div>
+    <div class="price">
+      <div><div class="pt">Custom</div><h3>Built around you</h3>
+      <p class="mini">More than one location, an AI phone receptionist that answers calls you miss or that come in after hours, or a different mix. Quoted for your business.</p>
+      <div class="amt"><div>Price<b>Quoted</b></div></div>
+      <p class="mini">You see a written quote and decide before you pay.</p></div>
+      <ul class="ck">
+        <li>Any mix of Tier 1 and Tier 2 pieces</li>
+        <li>AI phone receptionist with included minutes</li>
+        <li>Multiple locations, quoted per location</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tbl" style="margin-top:22px"><table>
+    <thead><tr><th>What you get</th><th>Tier 1</th><th>Tier 2</th><th>Custom</th></tr></thead>
+    <tbody>
+      <tr><td>Custom website, hosting and domain</td><td>Included</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>Chat assistant</td><td>Included</td><td>Advanced, saves to CRM</td><td>Quoted</td></tr>
+      <tr><td>Inquiry form to your email</td><td>Included</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>Changes each month</td><td>3</td><td>5</td><td>Quoted</td></tr>
+      <tr><td>Business email on your domain</td><td>No</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>CRM</td><td>No</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>Business number with new lead text alerts</td><td>No</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>Missed call text back</td><td>No</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>Review requests after a job</td><td>No</td><td>Included</td><td>Quoted</td></tr>
+      <tr><td>AI phone receptionist</td><td>No</td><td>No</td><td>Available, quoted</td></tr>
+    </tbody>
+  </table></div>
+  <p class="fine">Extra changes are $20 each, and a priority change done in 1 business day is $20 each. Chat assistant usage above what is included is billed at market price on a separate bill. A new page or a redesign is quoted first and starts at $250. We do not promise traffic, rankings or leads.</p>
+  <div class="links"><a href="https://bellemarkdemosite.netlify.app" target="_blank" rel="noopener">See the sample site</a><a href="https://bellemark-agreement.netlify.app" target="_blank" rel="noopener">Read the Tier 1 agreement</a><a href="https://bellemark-tier2-agreement.netlify.app" target="_blank" rel="noopener">Read the Tier 2 agreement</a></div>
+</div></section>
+
+<section class="s"><div class="in">
+  <p class="eye">How it works</p>
+  <h2>We do the work. You stay on the job.</h2>
+  <div class="steps" style="margin-top:26px">
+    <div class="step"><div class="c">1</div><h4>Tell us about your business</h4><p>Services, towns, hours, photos and the way you want calls handled. A 15 minute call is enough to start.</p></div>
+    <div class="step"><div class="c">2</div><h4>We build and set it up</h4><p>Your site, your number, the text back and the CRM are set up and tested before they go live. You approve what the assistant says.</p></div>
+    <div class="step"><div class="c">3</div><h4>It runs, you send changes</h4><p>New hours, a new service, a new photo. Send it through the change request form and we handle it.</p></div>
+  </div>
+</div></section>
+
+<section class="s alt faq"><div class="in">
+  <p class="eye">Questions</p>
+  <h2>Quick answers.</h2>
+  <details><summary>Is the assistant a real person?</summary><p>No. It is an automated assistant that answers common questions and collects the details of the problem. It never makes promises for you, and a real person follows up on every request.</p></details>
+  <details><summary>Will this get me more customers?</summary><p>We cannot promise that. We do not promise leads or rankings. We make sure people who reach you get an answer fast, at any hour, and that no lead gets lost.</p></details>
+  <details><summary>What does the 3 month minimum mean?</summary><p>You agree to at least 3 months so we have time to set up and tune everything. After that it continues month to month and you can cancel any time with written notice before your next billing date. If you cancel during the first 3 months, you pay half of the monthly fees for the months that are left.</p></details>
+  <details><summary>Who owns the site and the domain?</summary><p>Bellemark owns the website design, code, hosting and domain while your service is active. You own your business name, logo, photos, text and customer information. If you cancel, the domain transfers to you for a flat $25 fee, and we keep your site running during the transfer.</p></details>
+  <details><summary>What if the phone carriers reject the texting?</summary><p>Texting needs approval from carriers, which we do not control. The Tier 2 agreement explains what happens if it is rejected, and the texting part of the fee does not start until your business number is working.</p></details>
+  <details><summary>What is not included?</summary><p>Paid ads, search engine work, photography, large amounts of new content, extra pages and redesigns. Anything outside the package is quoted first, so you always see the price before we start.</p></details>
+  <details><summary>How do I reach you?</summary><p>Monday to Friday, 9 am to 4 pm Eastern, by message or call. We reply within 1 business day. Change requests go through the change request form.</p></details>
+  <details><summary>What happens with my customers' information?</summary><p>It belongs to you. We use it only to run your system. Our <a href="privacy.html">privacy policy</a> explains how we handle it.</p></details>
+</div></section>
+
+<section class="dark cta" id="book"><div class="in"><div class="row">
+  <div><h3>Book a free 15 minute call.</h3><p>We will show you a sample built around your business before you spend a dollar.</p></div>
+  <div class="r"><a class="m" href="mailto:bellemarkcontact@gmail.com">bellemarkcontact@gmail.com</a><span>678-630-1321 · Mon to Fri, 9 to 4 Eastern</span></div>
+</div></div></section>
+
+<footer class="foot"><div class="in"><div class="row"><span>Bellemark Studio · Newnan, Georgia</span><span style="display:flex;flex-wrap:wrap;gap:6px 18px"><a href="index.html" style="text-decoration:none">Law firms</a><a href="compliance.html" style="text-decoration:none">Compliance</a><a href="privacy.html" style="text-decoration:none">Privacy</a><a href="terms.html" style="text-decoration:none">Terms</a></span></div></div></footer>
+<script>
+(function(){var a=document.getElementById('c1'),b=document.getElementById('c2'),c=document.getElementById('c3');
+function f(n){return '$'+Math.round(n).toLocaleString('en-US')}
+function u(){var m=+a.value,j=+b.value,p=+c.value/100,t=m*4.33*j*p;
+document.getElementById('o1').textContent=m;document.getElementById('o2').textContent=f(j);document.getElementById('o3').textContent=c.value+'%';
+document.getElementById('big').textContent=f(t);
+document.getElementById('cmp').textContent='That is '+m+' missed calls a week at '+f(j)+' a job with '+c.value+'% booking. Tier 2 is $650 a month. Sample math only, not a promise.'}
+[a,b,c].forEach(function(e){e.addEventListener('input',u)});u()})();
+</script>
+</body></html>
