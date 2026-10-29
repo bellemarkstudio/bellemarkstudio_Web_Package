@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Compliance and Ethics | Bellemark Studio</title>
+<meta name="description" content="How an AI receptionist for a law firm intersects with ethics rules, confidentiality, call recording, AI disclosure and telephone law, with citations, and what Bellemark does about each.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800;900&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#FFFFFF;--alt:#F4F8FC;--ink:#0E1A27;--muted:#55657A;--line:#DDE5EE;--blue:#1BA8F0;--blue-ink:#0A7FBF;--card:#FFFFFF;--cardtop:#BFE6FB;--dark:#0E1A27;--dark2:#12233A;--dark-ink:#F2F6FA;--dark-muted:#98A8BA;--warn:#FFF6E5;--warn-line:#EBCB8B;--warn-ink:#5B4210;--do:#EEF8F3;--do-line:#B9E3CF;--green:#1E8F5F;--head:'Archivo','Arial Black',Arial,sans-serif;--body:'Public Sans',system-ui,Arial,sans-serif;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0B1420;--alt:#0F1B2B;--ink:#EAF0F6;--muted:#9BAABB;--line:#22344A;--blue:#38BDF8;--blue-ink:#38BDF8;--card:#122033;--cardtop:#1E4A6B;--warn:#2A2312;--warn-line:#6B5A2B;--warn-ink:#EAD9A8;--do:#0F2A20;--do-line:#245B44;--green:#4CD39A;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0B1420;--alt:#0F1B2B;--ink:#EAF0F6;--muted:#9BAABB;--line:#22344A;--blue:#38BDF8;--blue-ink:#38BDF8;--card:#122033;--cardtop:#1E4A6B;--warn:#2A2312;--warn-line:#6B5A2B;--warn-ink:#EAD9A8;--do:#0F2A20;--do-line:#245B44;--green:#4CD39A;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.65}
+[hidden]{display:none!important}
+.in{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,h4{font-family:var(--head);margin:0;line-height:1.1;text-wrap:balance}
+a{color:var(--blue-ink)}:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.eye{font-size:.72rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-ink);margin:0 0 10px}
+.dark{background:var(--dark);color:var(--dark-ink)}.dark .eye{color:var(--blue)}
+.top{border-top:3px solid var(--blue)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-block:22px}
+.brand{font-weight:600;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;white-space:nowrap;color:var(--dark-ink);text-decoration:none}
+.tag{font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);border:1.5px solid var(--blue);padding:8px 14px;border-radius:3px;text-decoration:none;white-space:nowrap}
+.tag:hover{background:var(--blue);color:#06121D}
+@media(max-width:480px){.brand{letter-spacing:.16em}.tag{padding:8px 10px;letter-spacing:.1em}}
+.hero{padding-block:20px 56px}
+.hero h1{font-weight:900;font-size:clamp(2rem,5.4vw,3.3rem);letter-spacing:-.015em;max-width:20ch}
+.hero p.l{color:var(--dark-muted);max-width:62ch;margin:18px 0 0;font-size:1.04rem}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:.8rem;color:var(--dark-muted)}
+.meta b{color:var(--dark-ink);font-weight:600}
+.notice{background:var(--warn);border:1px solid var(--warn-line);color:var(--warn-ink);border-radius:8px;padding:18px 20px;font-size:.93rem;margin-block:28px 0}
+.notice b{font-family:var(--head)}
+.toc{background:var(--alt);border-bottom:1px solid var(--line);padding-block:22px}
+.toc ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.toc a{display:inline-block;border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 14px;font-size:.84rem;text-decoration:none;color:var(--ink)}
+.toc a:hover{border-color:var(--blue);color:var(--blue-ink)}
+main section{padding-block:56px;border-top:1px solid var(--line)}
+main section:first-of-type{border-top:0}
+main section.alt{background:var(--alt)}
+main h2{font-weight:800;font-size:clamp(1.5rem,3.6vw,2.1rem);margin-bottom:12px;max-width:28ch;letter-spacing:-.01em}
+main .sub{color:var(--muted);max-width:68ch;margin:0 0 26px}
+main p{max-width:72ch}
+.two{display:grid;gap:14px}
+.box{border-radius:8px;padding:22px;border:1px solid var(--line);background:var(--card);border-top:3px solid var(--cardtop)}
+.box.do{background:var(--do);border-color:var(--do-line);border-top-color:var(--green)}
+.box h3{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;font-family:var(--body);color:var(--blue-ink);margin-bottom:12px}
+.box.do h3{color:var(--green)}
+.box ul{margin:0;padding-left:1.15rem;display:grid;gap:9px;font-size:.94rem}
+.box p{margin:0 0 10px;font-size:.94rem}
+.box p:last-child{margin-bottom:0}
+.cite{font-size:.82rem;color:var(--muted);display:block;margin-top:2px}
+code,.k{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.86em;background:var(--alt);border:1px solid var(--line);border-radius:4px;padding:1px 5px;overflow-wrap:anywhere}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--card);margin-top:14px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:.9rem}
+th,td{text-align:left;vertical-align:top;padding:11px 14px;border-bottom:1px solid var(--line)}
+th{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);background:var(--alt);font-weight:600}
+tr:last-child td{border-bottom:0}
+.flag{display:inline-block;font-size:.64rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:999px;padding:2px 9px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.flag.y{border-color:var(--warn-line);color:var(--warn-ink);background:var(--warn)}
+.note{border-left:4px solid var(--blue);padding:4px 0 4px 16px;color:var(--muted);font-size:.93rem;max-width:72ch;margin:20px 0 0}
+.ck{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.ck li{display:flex;gap:10px;font-size:.95rem}.ck li::before{content:"\2713";color:var(--blue-ink);font-weight:600;flex:none}
+.src{margin:0;padding-left:1.2rem;display:grid;gap:10px;font-size:.92rem;max-width:80ch}
+.src li{overflow-wrap:anywhere}
+.cta{padding-block:52px}.cta .row{display:grid;gap:20px;align-items:center}
+.cta h3{font-size:1.6rem;font-weight:800}.cta p{margin:8px 0 0;color:var(--dark-muted);max-width:50ch}
+.cta a.m{display:block;color:var(--blue);font-weight:800;font-family:var(--head);font-size:1.15rem;text-decoration:none;overflow-wrap:anywhere}
+.cta span{display:block;color:var(--dark-muted);font-size:.9rem;margin-top:6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--blue);color:#06121D;font-family:var(--head);font-weight:800;text-decoration:none;border-radius:4px}
+.foot{background:#08111B;color:var(--dark-muted);font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:18px 0}
+.foot .row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.foot a{color:var(--dark-muted);text-decoration:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(min-width:860px){.two{grid-template-columns:1.15fr 1fr}.cta .row{grid-template-columns:1fr auto}}
+</style>
+</head>
+<body>
+<header class="dark top"><div class="in">
+  <div class="nav"><a class="brand" href="index.html">Bellemark Studio</a><a class="tag" href="index.html#book">Book a demo</a></div>
+  <div class="hero">
+    <p class="eye">Compliance and ethics</p>
+    <h1>The rules behind an AI receptionist for a law firm.</h1>
+    <p class="l">A law firm is not a plumbing company. Calls to a firm can carry privileged and sensitive information, and the lawyers who own the phone line answer to bar rules, state statutes and federal telephone law. This page lays out which rules touch an AI receptionist, where each comes from, and what Bellemark does about it.</p>
+    <div class="meta"><span><b>Last reviewed</b> October 28, 2026</span><span><b>Scope</b> United States, with Georgia as the reference state</span><span><b>Status</b> Information, not legal advice</span></div>
+  </div>
+</div></header>
+
+<nav class="toc" aria-label="On this page"><div class="in"><ol>
+  <li><a href="#how">How to read this</a></li>
+  <li><a href="#upl">Unauthorized practice</a></li>
+  <li><a href="#confidentiality">Confidentiality</a></li>
+  <li><a href="#prospective">Prospective clients</a></li>
+  <li><a href="#disclosure">AI disclosure</a></li>
+  <li><a href="#supervision">Supervision</a></li>
+  <li><a href="#privilege">Privilege</a></li>
+  <li><a href="#recording">Call recording</a></li>
+  <li><a href="#telephone">Calls and texts</a></li>
+  <li><a href="#state-ai">State AI laws</a></li>
+  <li><a href="#advertising">Advertising and fees</a></li>
+  <li><a href="#data">Data and breach</a></li>
+  <li><a href="#commitments">What we commit to</a></li>
+  <li><a href="#checklist">Firm checklist</a></li>
+  <li><a href="#sources">Sources</a></li>
+</ol></div></nav>
+
+<main>
+
+<section id="how"><div class="in">
+  <p class="eye">Start here</p>
+  <h2>Two things are kept separate on this page.</h2>
+  <p class="sub">Each section has a left column that describes what a rule, statute or opinion says, and a right column that describes what Bellemark does in response. The first is about the law. The second is a promise from us, and only a promise we can keep.</p>
+  <div class="two">
+    <div class="box"><h3>What this page is</h3><ul>
+      <li>A map of the rules that bear on an AI receptionist, with citations so your attorneys or ethics counsel can check each one.</li>
+      <li>A plain description of how we set up the service to stay inside those rules.</li>
+    </ul></div>
+    <div class="box"><h3>What this page is not</h3><ul>
+      <li>Not legal advice, and Bellemark is not a law firm.</li>
+      <li>Not a statement that the service is "compliant," "approved" or "certified." No bar or regulator certifies tools like this.</li>
+      <li>Not a replacement for your state bar's current rules. Rules and cases change, and some points below are unsettled.</li>
+    </ul></div>
+  </div>
+  <div class="notice"><b>Responsibility stays with the firm.</b> Under the professional conduct rules, the lawyers remain responsible for how client and prospective-client information is handled, for supervising non-lawyer help and technology, and for what is said on the firm's behalf. We design for that division of responsibility instead of pretending a vendor can take it over.</div>
+</div></section>
+
+<section id="upl" class="alt"><div class="in">
+  <p class="eye">01 · Unauthorized practice of law</p>
+  <h2>The receptionist takes information. It does not give legal advice.</h2>
+  <p class="sub">The line between intake and legal advice is the most important design limit for any non-lawyer, human or automated, who speaks to the public on a firm's behalf.</p>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>Georgia defines the practice of law and bars unlicensed practice by statute. <span class="cite">O.C.G.A. §§ 15-19-50 and 15-19-51</span></li>
+      <li>Lawyers may not assist someone else in practicing law without a license. <span class="cite">Model Rule 5.5(a); Georgia Rule 5.5</span></li>
+      <li>Florida Bar Advisory Opinion 24-1 says an AI intake chatbot should say it is not a lawyer, keep its questions to factual information, and send legal questions back to the lawyer. <span class="cite">Florida Bar Ethics Opinion 24-1 (2024)</span></li>
+      <li>Giving a caller a view on whether they have a case, their odds, deadlines that apply to them, or whether the firm will take them on all lean toward advice or an engagement decision, which belongs to the lawyer.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Scripts the receptionist for intake only: name, number, short reason for the call, and urgency.</li>
+      <li>Instructs it to decline legal questions, say it cannot give advice, and route the caller to the firm.</li>
+      <li>Never has it promise representation, a callback time the firm has not set, or an outcome.</li>
+      <li>Tests those limits before launch with questions callers actually ask, and shows you the results.</li>
+    </ul></div>
+  </div>
+  <p class="note">No language model can be guaranteed never to say something it should not. That is why the script is limited, your attorneys approve it, and call logs are available for review (see Supervision).</p>
+</div></section>
+
+<section id="confidentiality"><div class="in">
+  <p class="eye">02 · Confidentiality</p>
+  <h2>What a caller tells the receptionist is information the firm must protect.</h2>
+  <p class="sub">Confidentiality is broader than privilege. It covers nearly everything a lawyer learns about a matter, including from someone who never becomes a client.</p>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>A lawyer must not reveal information relating to the representation without informed consent or another listed exception, and must make reasonable efforts to prevent unauthorized access to or disclosure of it. <span class="cite">Model Rule 1.6(a), (c); Georgia Rule 1.6</span></li>
+      <li>Duty of technological competence is part of the duty of competence. <span class="cite">Model Rule 1.1, comment [8]</span></li>
+      <li>ABA Formal Opinion 512 (July 2024) says a lawyer must evaluate the risk of inputting client information into a generative AI tool, and that "self-learning" tools that may disclose that information to others can require the client's informed consent, with boilerplate in an engagement letter not enough. <span class="cite">ABA Formal Op. 512</span></li>
+      <li>The Florida opinion makes the same point: confirm the provider has to preserve confidentiality, look at its security, and find out whether it retains what is submitted. <span class="cite">Florida Bar Ethics Op. 24-1</span></li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Collects the minimum: contact details and a short reason for the call, with the greeting inviting the caller to keep details for the attorney.</li>
+      <li>Gives the firm, in writing before launch, a list of every vendor that processes call audio or text, where data is stored, who at Bellemark can access it, how long it is kept, and how it is deleted if you leave.</li>
+      <li>Tells you what each vendor's terms say about using data to train models, and turns off training or data sharing wherever the platform offers that setting.</li>
+      <li>Uses firm data only to run that firm's intake. It is never used to market to other firms or sold.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="prospective" class="alt"><div class="in">
+  <p class="eye">03 · Prospective clients and conflicts</p>
+  <h2>People who call but never sign still have rights.</h2>
+  <p class="sub">The firm's first contact with a possible client is usually a phone call, which is exactly where an automated receptionist sits.</p>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>A person who consults a lawyer about possibly forming a client-lawyer relationship is a prospective client. The lawyer must not use or reveal what was learned, even if no relationship follows. <span class="cite">Model Rule 1.18(a)-(b); Georgia Rule 1.18</span></li>
+      <li>Information from a prospective client can disqualify the lawyer from a later matter if it could be significantly harmful to that person. A firm can limit the exposure by limiting the initial information it takes in. <span class="cite">Model Rule 1.18(c)-(d) and comment [4]</span></li>
+      <li>Conflict checks run on the information collected. Intake data therefore has to be accurate enough to feed the firm's conflict process. <span class="cite">Model Rules 1.7, 1.9, 1.10; Georgia counterparts</span></li>
+      <li>Florida's opinion suggests screening questions so a chatbot limits its conversations with people already represented by another lawyer. <span class="cite">Florida Bar Ethics Op. 24-1</span></li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Keeps the script to what is needed to identify the caller and decide who should follow up. It does not collect case facts, adverse-party details or documents.</li>
+      <li>Captures names of other parties only if your attorneys tell us to, so your conflict process can use them.</li>
+      <li>Can ask whether the caller already has a lawyer on the matter, if your attorneys want that screen.</li>
+      <li>Routes every inquiry to a person at your firm. The receptionist does not accept or decline matters.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="disclosure"><div class="in">
+  <p class="eye">04 · AI disclosure</p>
+  <h2>Callers are told they are speaking with an automated assistant.</h2>
+  <p class="sub">Pretending to be a person is the fastest way to create an ethics problem, a consumer-protection problem and a trust problem at the same time.</p>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>Florida Bar Opinion 24-1 says a lawyer must inform prospective clients that they are communicating with an AI program. It also holds the lawyer responsible if a chatbot gives misleading information or communicates in an intrusive or coercive way. <span class="cite">Florida Bar Ethics Op. 24-1</span></li>
+      <li>ABA Formal Opinion 512 ties disclosure to the duty to communicate with clients and to the rules against false or misleading communications. <span class="cite">Model Rules 1.4, 7.1; ABA Formal Op. 512</span></li>
+      <li>Some state statutes require AI disclosure in particular settings. Utah amended its AI disclosure law in 2025 and addresses regulated occupations, which is a reason to check each state where the firm takes calls. <span class="cite">Utah S.B. 226 (2025)</span></li>
+      <li>There is no single federal or Georgia rule that applies one disclosure sentence to every law firm call. The ethics opinions and state statutes above are why disclosure is the safe default.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Opens every call with a greeting that says the caller has reached the firm's automated assistant. The wording is yours to approve.</li>
+      <li>Never has the receptionist claim to be a person, paralegal, intake specialist or attorney, and instructs it to answer honestly if asked.</li>
+      <li>Lets callers ask for a live person and routes that request to the firm.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="supervision" class="alt"><div class="in">
+  <p class="eye">05 · Supervision of technology and vendors</p>
+  <h2>The lawyers supervise the receptionist the way they supervise any non-lawyer help.</h2>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>Partners and supervising lawyers must make reasonable efforts to ensure the firm has measures giving reasonable assurance that non-lawyers' conduct fits the lawyer's obligations. <span class="cite">Model Rules 5.1, 5.3; Georgia Rules 5.1, 5.3</span></li>
+      <li>ABA Formal Opinion 08-451 applies those rules to outsourcing, including vetting the provider and its confidentiality safeguards. <span class="cite">ABA Formal Op. 08-451 (2008)</span></li>
+      <li>ABA Formal Opinion 512 applies Rules 5.1 and 5.3 to generative AI: firms should have policies, training and oversight, and should review output rather than rely on it. <span class="cite">ABA Formal Op. 512</span></li>
+      <li>The State Bar of Georgia publishes AI resources for lawyers, and other states have issued their own opinions (Florida, for one, above). Your counsel should check the current guidance for each state the firm practices in.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Sets up the system so the firm can review call logs and transcripts, then walks your staff through where to find them.</li>
+      <li>Sends urgent and new-inquiry alerts to named people at your firm, so a person always follows up.</li>
+      <li>Documents the setup in a one-page summary your attorneys can file as part of their supervision records.</li>
+      <li>Treats any change to what the receptionist says as a change that needs your approval.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="privilege"><div class="in">
+  <p class="eye">06 · Privilege and AI tools</p>
+  <h2>Privilege is fragile, and courts are only beginning to address AI.</h2>
+  <p class="sub">Attorney-client privilege depends on a confidential communication made for the purpose of getting legal advice. Whether and when an AI tool sits inside that protection is not settled law.</p>
+  <div class="two">
+    <div class="box"><h3>What the law says</h3><ul>
+      <li>A federal trial court in New York held in February 2026 that a criminal defendant's conversations with a public generative AI tool were not protected by attorney-client privilege or work product. <span class="cite">United States v. Heppner (S.D.N.Y. Feb. 13, 2026)</span></li>
+      <li>That is one district court decision on a consumer AI tool. It does not bind a Georgia court and it did not involve a law firm's own intake system, but it is a signal that courts may not treat what is typed or said to an AI tool as automatically protected.</li>
+      <li>A first call to a firm is often before any engagement, so privilege may not attach to everything said on it in any case. The confidentiality duties above still apply.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Designs intake to avoid substantive legal discussion, which keeps less sensitive content on the system to begin with.</li>
+      <li>Does not use public consumer AI chat products to handle your callers' information.</li>
+      <li>Tells you plainly in the data summary which vendors touch the information, so your attorneys can judge the privilege and confidentiality risk themselves.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="recording" class="alt"><div class="in">
+  <p class="eye">07 · Call recording and wiretap law</p>
+  <h2>Recording and transcribing calls is regulated by federal and state law.</h2>
+  <p class="sub">An AI receptionist usually records and transcribes. Whether that needs the caller's consent depends on where the caller is, not only where the firm is.</p>
+  <div class="two">
+    <div class="box"><h3>What the law says</h3><ul>
+      <li>Federal law allows recording when one party to the call consents. <span class="cite">18 U.S.C. § 2511(2)(d)</span></li>
+      <li>Georgia follows one-party consent for a person who is a party to the call. <span class="cite">O.C.G.A. § 16-11-66</span></li>
+      <li>Several states require all parties to consent, including California, Florida, Illinois, Maryland, Massachusetts, Montana, Nevada, New Hampshire, Pennsylvania and Washington. Connecticut imposes civil liability unless all parties consent, and a few states (Delaware, Michigan) are ambiguous. <span class="cite">Justia 50-State Survey, Recording Phone Calls and Conversations</span></li>
+      <li>For calls that cross state lines, the safe practice is to follow the stricter state's rule. The California Supreme Court applied California's all-party rule to a call between a California resident and someone in a one-party state. <span class="cite">Kearney v. Salomon Smith Barney, Inc. (Cal. 2006)</span></li>
+      <li>California's Invasion of Privacy Act has been used against AI voice vendors as well as the businesses using them. In February 2025 a federal court in the Northern District of California let a class action against Google's Contact Center AI proceed past a motion to dismiss, adopting a "capability" test under which a vendor that could use call data for its own benefit can be treated as a third-party eavesdropper. That is a ruling at the pleading stage, not a final judgment. <span class="cite">Ambriz v. Google LLC (N.D. Cal. Feb. 10, 2025); Cal. Penal Code §§ 631, 632, 632.7</span></li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Builds a recording and AI notice into the opening greeting so every caller hears it before anything is collected, regardless of state.</li>
+      <li>Treats the all-party standard as the default so a caller in California, Florida or Illinois is covered the same way as a caller in Georgia.</li>
+      <li>Tells you in writing which vendors process the audio and what their terms say about using call data for their own purposes, since that is the question the Ambriz line of cases turns on.</li>
+      <li>Lets your counsel adjust the notice wording for the states your firm covers.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="telephone"><div class="in">
+  <p class="eye">08 · Telephone and text law</p>
+  <h2>Answering calls is one thing. Calling and texting people back is another.</h2>
+  <div class="two">
+    <div class="box"><h3>What the law says</h3><ul>
+      <li>The Telephone Consumer Protection Act and the FCC's rules restrict certain autodialed and artificial or prerecorded voice calls and texts to consumers. <span class="cite">47 U.S.C. § 227; 47 C.F.R. § 64.1200</span></li>
+      <li>In February 2024 the FCC ruled that voices generated with AI are "artificial" voices under the TCPA, so calls using them generally need the called party's prior express consent. <span class="cite">FCC Declaratory Ruling, FCC 24-17, CG Docket No. 23-362 (Feb. 2024)</span></li>
+      <li>That ruling is about calls a business places. A caller who dials your firm and speaks with an answering assistant is a different situation from the firm placing an outbound AI call.</li>
+      <li>Texting is treated as calling under TCPA rules, so any automated text back to a caller, such as a missed-call text, should be set up with counsel's guidance on consent and opt-out handling.</li>
+      <li>Lawyer rules on live telephone solicitation of potential clients apply to the lawyers and anyone acting for them. <span class="cite">Model Rule 7.3; Georgia Rule 7.3</span></li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Sets up the receptionist for inbound calls. We do not set up outbound AI voice calls or cold text campaigns for law firms.</li>
+      <li>Where your firm wants an automated follow-up text to a person who just called, we use plain informational wording and include opt-out language, and we ask your attorneys to approve it first.</li>
+      <li>Honors opt-outs and do-not-contact requests by stopping further messages to that number.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="state-ai" class="alt"><div class="in">
+  <p class="eye">09 · State AI statutes</p>
+  <h2>A small and moving set of state laws.</h2>
+  <p class="sub">State AI laws are changing quickly. The entries below describe what we reviewed and what remains for your counsel to confirm.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Law</th><th>What it does</th><th>Status and note</th></tr></thead>
+    <tbody>
+      <tr><td><b>Utah</b><br><span class="cite">S.B. 226 (2025), amending the Utah AI Policy Act</span></td><td>Sets AI disclosure duties, including for regulated occupations.</td><td><span class="flag y">Check applicability</span> Utah callers only, but shows the direction of travel.</td></tr>
+      <tr><td><b>Texas</b><br><span class="cite">H.B. 149, TRAIGA</span></td><td>Bars certain harmful uses of AI (such as intentional unlawful discrimination or manipulation), allows Attorney General investigations, creates a regulatory sandbox.</td><td>Effective January 1, 2026. The sources we reviewed describe no general duty to tell consumers they are talking to AI.</td></tr>
+      <tr><td><b>Colorado</b><br><span class="cite">S.B. 24-205, Colorado AI Act</span></td><td>Risk management and reasonable-care duties for "high-risk" AI systems that make consequential decisions.</td><td><span class="flag y">Verify current status</span> The date was pushed to June 30, 2026 and the legislature could change it again. Whether intake sorting counts as a consequential decision is for counsel.</td></tr>
+      <tr><td><b>Georgia</b></td><td>The sources we reviewed identify no Georgia statute that specifically regulates an AI phone receptionist.</td><td>Georgia ethics rules and the recording statute above still apply.</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="advertising"><div class="in">
+  <p class="eye">10 · Advertising, referrals and fee rules</p>
+  <h2>How Bellemark charges matters to a law firm.</h2>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>Lawyers' communications about their services must not be false or misleading, and the lawyer is responsible for what an automated system says on the firm's behalf. <span class="cite">Model Rule 7.1; Florida Bar Ethics Op. 24-1</span></li>
+      <li>A lawyer may not give anything of value to a person for recommending the lawyer's services, except for reasonable advertising costs. <span class="cite">Model Rule 7.2(b); Georgia Rule 7.2</span></li>
+      <li>A lawyer may not share legal fees with a non-lawyer, with limited exceptions. <span class="cite">Model Rule 5.4(a); Georgia Rule 5.4</span></li>
+      <li>Georgia's advertising and solicitation rules have their own labeling and content requirements that differ from the Model Rules. Check Georgia Rules 7.1 to 7.5 for any text the receptionist or follow-ups use.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Charges fixed fees for the system: a one-time setup fee and a flat monthly fee. We do not charge per client signed, and we do not take a share of your legal fees.</li>
+      <li>Does not sell or route cases, and does not pay anyone for referring clients to your firm.</li>
+      <li>Keeps all statements about your firm in the receptionist's script to ones you approve.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="data" class="alt"><div class="in">
+  <p class="eye">11 · Data security, breach and health information</p>
+  <h2>Reasonable security, plus a plan for when something goes wrong.</h2>
+  <div class="two">
+    <div class="box"><h3>What the rules say</h3><ul>
+      <li>Reasonable measures to secure electronic communications with clients, with the level of protection matched to sensitivity. <span class="cite">Model Rule 1.6(c); ABA Formal Op. 477R (2017)</span></li>
+      <li>A lawyer's duties after an electronic data breach include notifying affected current clients. <span class="cite">ABA Formal Op. 483 (2018)</span></li>
+      <li>Every state has a breach-notification statute. Georgia's is at <span class="k">O.C.G.A. § 10-1-910 et seq.</span> and its coverage is narrower than some states'. Your counsel should check how it, and the laws of your callers' states, apply.</li>
+      <li>HIPAA generally does not cover a law firm collecting information from its own prospective clients, but it can apply when a firm handles protected health information as a business associate of a covered entity. Many personal injury and medical-related inquiries still involve sensitive health details, so treat that information carefully either way.</li>
+    </ul></div>
+    <div class="box do"><h3>What Bellemark does</h3><ul>
+      <li>Collects health details only if your attorneys ask for them. The standard script does not.</li>
+      <li>Limits access to your account to the people who need it, and keeps credentials out of shared documents.</li>
+      <li>Agrees in writing to notify you promptly if we learn of unauthorized access to your firm's data, so you can meet your own obligations.</li>
+      <li>Returns or deletes your data when the engagement ends, as set out in the data summary.</li>
+    </ul></div>
+  </div>
+</div></section>
+
+<section id="commitments"><div class="in">
+  <p class="eye">12 · Summary</p>
+  <h2>Who is responsible for what.</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Area</th><th>Bellemark</th><th>Your firm</th></tr></thead>
+    <tbody>
+      <tr><td>Script and limits</td><td>Builds intake-only script and tests it</td><td>Reviews and approves the script before launch</td></tr>
+      <tr><td>AI and recording notice</td><td>Builds the notice into the greeting</td><td>Approves the wording and confirms it fits the states you cover</td></tr>
+      <tr><td>Data handling</td><td>Documents vendors, storage, access, retention and deletion in writing</td><td>Decides whether that is acceptable for the firm's duty of confidentiality</td></tr>
+      <tr><td>Supervision</td><td>Provides call logs, transcripts and alerts</td><td>Reviews them and follows up on every inquiry</td></tr>
+      <tr><td>Conflicts and intake decisions</td><td>Captures contact details and a short reason</td><td>Runs conflict checks and decides who to accept</td></tr>
+      <tr><td>Outbound contact</td><td>No outbound AI calls or cold text campaigns</td><td>Approves any follow-up text and handles any live calls under Rule 7.3</td></tr>
+      <tr><td>Fees</td><td>Fixed setup and monthly fee only</td><td>Confirms the arrangement fits its fee-sharing and referral rules</td></tr>
+      <tr><td>Legal questions about any of this</td><td>Not a law firm; no legal advice</td><td>Ethics counsel or state bar ethics hotline</td></tr>
+    </tbody>
+  </table></div>
+</div></section>
+
+<section id="checklist" class="alt"><div class="in">
+  <p class="eye">13 · Before you go live</p>
+  <h2>A checklist for your attorneys.</h2>
+  <ul class="ck" style="max-width:72ch">
+    <li>Read the current rules and ethics opinions in every state the firm practices in or takes calls from, starting with the sources below.</li>
+    <li>Approve the greeting, the questions asked and the limits on what the receptionist will say.</li>
+    <li>Approve the AI and call-recording notice, and decide whether to treat all callers as all-party-consent callers.</li>
+    <li>Read the data handling summary and decide whether the vendors and retention terms meet the firm's confidentiality duties.</li>
+    <li>Decide who receives urgent alerts, who follows up on each inquiry, and how quickly.</li>
+    <li>Set a schedule for reviewing call logs and transcripts.</li>
+    <li>Decide whether any automated text follow-up is used and, if so, who approves its wording.</li>
+    <li>Confirm the fee arrangement fits the firm's referral and fee-sharing rules.</li>
+    <li>Keep a copy of the approved script and setup summary with the firm's supervision records.</li>
+  </ul>
+</div></section>
+
+<section id="sources"><div class="in">
+  <p class="eye">14 · Sources</p>
+  <h2>Where to check each point.</h2>
+  <p class="sub">Rule texts and statutes change. Treat the links as starting points and confirm the current text with your counsel or your state bar. The entries marked as summaries are secondary sources.</p>
+  <ol class="src">
+    <li>ABA Model Rules of Professional Conduct, Rules 1.1, 1.4, 1.6, 1.7, 1.9, 1.10, 1.18, 5.1, 5.3, 5.4, 5.5, 7.1 to 7.3: <a href="https://www.americanbar.org/groups/professional_responsibility/publications/model_rules_of_professional_conduct/" target="_blank" rel="noopener">americanbar.org, Model Rules</a></li>
+    <li>ABA Formal Opinion 512, <em>Generative Artificial Intelligence Tools</em> (July 2024); ABA Formal Opinions 08-451, 477R and 483: <a href="https://www.americanbar.org/groups/professional_responsibility/publications/ethics_opinions/" target="_blank" rel="noopener">ABA ethics opinions</a></li>
+    <li>Georgia Rules of Professional Conduct (Rules 1.1 to 8.5), O.C.G.A. §§ 15-19-50, 15-19-51, 16-11-66 and 10-1-910 et seq.: State Bar of Georgia, <a href="https://www.gabar.org" target="_blank" rel="noopener">gabar.org</a></li>
+    <li>Florida Bar Ethics Opinion 24-1 (summary): <a href="https://www.hinshawlaw.com/en/insights/lawyers-for-the-profession-alert/florida-bar-advisory-opinion-24-1-gives-green-light-to-generative-ai-use-by-lawyers-with-four-ethical-caveats" target="_blank" rel="noopener">Hinshaw &amp; Culbertson</a></li>
+    <li>18 U.S.C. § 2511: <a href="https://www.law.cornell.edu/uscode/text/18/2511" target="_blank" rel="noopener">Cornell LII</a></li>
+    <li>47 U.S.C. § 227 and 47 C.F.R. § 64.1200: <a href="https://www.law.cornell.edu/uscode/text/47/227" target="_blank" rel="noopener">47 U.S.C. § 227</a>, <a href="https://www.law.cornell.edu/cfr/text/47/64.1200" target="_blank" rel="noopener">47 C.F.R. § 64.1200</a></li>
+    <li>FCC Declaratory Ruling on AI-generated voices under the TCPA, FCC 24-17, CG Docket No. 23-362 (February 2024): fcc.gov</li>
+    <li>State call-recording laws (summary): <a href="https://www.justia.com/50-state-surveys/recording-phone-calls-and-conversations/" target="_blank" rel="noopener">Justia 50-State Survey</a></li>
+    <li><em>Ambriz v. Google LLC</em> (N.D. Cal. Feb. 10, 2025) (summaries): <a href="https://www.goodwinlaw.com/en/insights/publications/2025/02/alerts-practices-dpc-ftec-ai-voice-products-subject-to-california-invasion-of-privacy-claims" target="_blank" rel="noopener">Goodwin</a>, <a href="https://www.zwillgen.com/privacy/federal-judge-allows-google-customer-service-ai-class-action-to-proceed/" target="_blank" rel="noopener">ZwillGen</a></li>
+    <li>Texas H.B. 149 and Colorado S.B. 24-205 (summary): <a href="https://bassberry.com/news/texas-illinois-and-colorado-legislative-developments-impact-healthcare-ai-and-other-industries-while-u-s-congress-fails-to-pass-moratorium/" target="_blank" rel="noopener">Bass, Berry &amp; Sims</a></li>
+    <li><em>United States v. Heppner</em> (S.D.N.Y. Feb. 13, 2026); <em>Kearney v. Salomon Smith Barney, Inc.</em> (Cal. 2006); Cal. Penal Code §§ 631, 632, 632.7; Utah S.B. 226 (2025): see the court opinions and the state legislatures' sites for the full text.</li>
+  </ol>
+  <p class="note">Last reviewed October 28, 2026. We review this page when a rule changes or at least every six months. If you spot something out of date, email us and we will check it.</p>
+</div></section>
+
+</main>
+
+<section class="dark cta"><div class="in"><div class="row">
+  <div><h3>Bring your ethics counsel to the demo.</h3><p>We will walk through the greeting, the script, the data summary and what the logs look like, and answer your attorneys' questions as plainly as we can.</p></div>
+  <div><a class="btn" href="index.html#book">Book a 15 minute demo</a><span><a class="m" href="mailto:bellemarkcontact@gmail.com">bellemarkcontact@gmail.com</a></span></div>
+</div></div></section>
+
+<footer class="foot"><div class="in"><div class="row"><span>Bellemark Studio · Not a law firm · No legal advice</span><span><a href="index.html">Back to home</a></span></div></div></footer>
+</body>
+</html>
