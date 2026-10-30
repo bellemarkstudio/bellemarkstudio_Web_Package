@@ -32,14 +32,14 @@ header.site{background:var(--paper);border-bottom:1px solid var(--line);position
 .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
 .btn.ghost:hover{background:rgba(255,255,255,.1)}
 @media(min-width:1000px){.menu{display:flex}}
-@media(max-width:560px){.nav .btn{padding:0 16px;min-height:42px;font-size:.88rem}.logo b{font-size:1.1rem}.logo span span{display:none}.nav{gap:10px}.logo{gap:8px;min-width:0}.logo svg{width:32px;height:32px}.logo b{font-size:1rem;letter-spacing:.02em}.nav .btn{padding:0 12px;font-size:.8rem}}
+@media(max-width:560px){.nav .btn{display:none}.nav .btn{padding:0 16px;min-height:42px;font-size:.88rem}.logo b{font-size:1.1rem}.logo span span{display:none}.nav{gap:10px}.logo{gap:8px;min-width:0}.logo svg{width:32px;height:32px}.logo b{font-size:1rem;letter-spacing:.02em}.nav .btn{padding:0 12px;font-size:.8rem}}
 /* hero */
 .hero{position:relative;overflow:hidden;color:#fff;min-height:clamp(560px,82vh,780px);display:flex;align-items:center;
  background:linear-gradient(180deg,rgba(10,20,40,.55) 0%,rgba(10,20,40,.72) 100%),url('demo-hero.jpg') center/cover no-repeat,
  radial-gradient(ellipse 70% 90% at 80% 20%,rgba(185,139,62,.28),transparent 60%),linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%)}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,20,40,.5) 0%,rgba(10,20,40,.7) 100%)}
-.hero .frame{position:absolute;inset:22px;border:1px solid rgba(255,255,255,.55);pointer-events:none;z-index:2}
+.hero .frame{position:absolute;inset:22px 22px 78px;border:1px solid rgba(255,255,255,.55);pointer-events:none;z-index:2}
 .hero .in{display:block;padding-block:90px;text-align:center;position:relative;z-index:3;width:100%}
 .hero .eyebrow{color:var(--gold2)}
 .hero h1{font-size:clamp(2.5rem,6.2vw,4.7rem);letter-spacing:-.012em;max-width:16ch;margin-inline:auto;text-shadow:0 2px 24px rgba(0,0,0,.35)}
@@ -49,7 +49,7 @@ header.site{background:var(--paper);border-bottom:1px solid var(--line);position
 .hero .areas-line i{color:var(--gold2);font-style:normal;margin:0 8px}
 .hero .acts{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px;justify-content:center}
 .hero small{display:block;margin-top:20px;color:#C3CDE3;font-size:.88rem}
-@media(max-width:560px){.hero .frame{inset:10px}.hero .in{padding-block:64px}.hero .areas-line{letter-spacing:.14em}}
+@media(max-width:560px){.hero .frame{inset:10px 10px 70px}.hero .in{padding-block:64px 112px}.hero .areas-line{letter-spacing:.14em}}
 /* strip */
 .strip{background:var(--cream);border-bottom:1px solid var(--line)}
 .strip .in{display:grid;gap:18px;padding-block:26px}
@@ -214,9 +214,9 @@ footer.site .bot{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,
 /* mobile call bar */
 .callbar{display:none}
 @media(max-width:760px){
- .callbar{display:flex;position:fixed;left:0;bottom:0;z-index:30;width:calc(100% - 84px);padding:0 0 calc(14px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:none;pointer-events:none}
- .callbar a{pointer-events:auto;flex:1;box-shadow:0 10px 26px rgba(15,30,56,.3)}
- body{padding-bottom:70px}
+ .callbar{display:flex;position:fixed;left:0;bottom:0;z-index:30;padding:0 0 calc(16px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));background:none;pointer-events:none}
+ .callbar a{pointer-events:auto;flex:none;min-height:44px;padding:0 22px;border-radius:999px;box-shadow:0 8px 22px rgba(15,30,56,.3)}
+ body{padding-bottom:64px}
 }
 @media(prefers-reduced-motion:reduce){.hero .in>*,.pill i,.scrollcue::after{animation:none}.person,.person:hover{transition:none}}
 
@@ -356,3 +356,9 @@ footer.site .bot{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,
 .phead+.s{padding-top:60px}
 .kv b{font-size:clamp(1.2rem,2.2vw,1.55rem)}
 .kv b a{white-space:nowrap}
+
+.dnote{font-size:.8rem;line-height:1.5;margin:8px 0 14px;opacity:.78}
+.sbox.dark .dnote{color:#C9D2E6}
+
+@media(max-width:560px){.nav>.btn{display:none}.nav{justify-content:space-between}}
+html{scroll-behavior:auto}
