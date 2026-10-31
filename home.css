@@ -359,3 +359,6 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 .mleg i{width:10px;height:10px;border-radius:50%;background:var(--accent1);display:inline-block;margin-right:-10px}
 .mleg span{margin-left:auto}
 @media(max-width:600px){.mleg span{margin-left:0}}
+
+.stage .chip .pd{display:flex;gap:5px;margin-left:6px;font-style:normal}.stage .chip .pd b{width:6px;height:6px;border-radius:50%;background:var(--hline)}.stage .chip .pd b.on{width:18px;border-radius:6px;background:var(--accent1)}
+@media(min-width:980px){.stage{max-width:620px}}
