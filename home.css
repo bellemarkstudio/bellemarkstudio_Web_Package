@@ -284,3 +284,23 @@ body{background-image:radial-gradient(ellipse 60% 42% at 6% 100%,rgba(224,71,158
 :root{--dark:#120D36;--dark2:#1A1448;--dark3:#251B5E}
 header.top .nav>span>a:not(.tag){color:var(--hs)!important;font-weight:600;opacity:.95;transition:color .15s}
 header.top .nav>span>a:not(.tag):hover{color:var(--hi)!important}
+
+/* v5: lead flow band + header cursor glow */
+header.top{background:radial-gradient(circle 320px at var(--mx,50%) var(--my,30%),rgba(255,138,200,.14),transparent 70%),linear-gradient(180deg,var(--hero-top) 0%,var(--hero-mid) 45%,var(--hero-low) 78%,var(--bg) 100%)}
+header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-999px) var(--my,-999px),#000 0,transparent 100%),linear-gradient(90deg,#000 0,transparent 26%,transparent 74%,#000 100%);mask-image:radial-gradient(circle 170px at var(--mx,-999px) var(--my,-999px),#000 0,transparent 100%),linear-gradient(90deg,#000 0,transparent 26%,transparent 74%,#000 100%)}
+.flow{display:none;overflow:hidden;padding:64px 0 56px}
+.flow .fhead{max-width:1120px;margin:0 auto 34px;padding:0 24px}
+.flow .fhead h2{margin:6px 0 8px}
+.flow .fhead p{color:var(--muted);margin:0;max-width:620px}
+.flow .lane{display:flex;align-items:center;gap:18px;width:max-content;margin:0 0 18px;will-change:transform}
+.flow .fc{width:300px;flex:none;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;box-shadow:0 14px 36px rgba(60,40,140,.16)}
+.flow .fc .fl{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.flow .fc b{display:block;margin:8px 0 4px;font-size:1.02rem;color:var(--ink)}
+.flow .fc span.d{display:block;font-size:.86rem;color:var(--muted);line-height:1.45}
+.flow .bd{font-size:.66rem;font-weight:800;letter-spacing:.1em;padding:4px 9px;border-radius:999px;color:#fff;background:linear-gradient(90deg,#E0479E,#FF7A59)}
+.flow .bd.n{background:linear-gradient(90deg,#2F6BFF,#8F6BFF)}
+.flow .bd.m{background:linear-gradient(90deg,#7A5BFF,#C86BFF)}
+.flow .fc.ok{display:flex;align-items:center;gap:10px;width:auto;border-radius:999px;padding:12px 20px;font-weight:700;font-size:.88rem;color:var(--ink)}
+.flow .fc.ok i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+.flow .fnote{max-width:1120px;margin:10px auto 0;padding:0 24px;font-size:.8rem;color:var(--muted)}
+@media (min-width:901px) and (hover:hover) and (prefers-reduced-motion:no-preference){.flow{display:block}}
