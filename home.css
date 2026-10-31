@@ -277,9 +277,6 @@ header.top::after{animation:drift 14s ease-in-out infinite alternate}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0D0A2B;--alt:#140F3C;--card:#171244;--line:rgba(170,150,255,.20);--g-lav:#2A1F6B;--g-pink:#3F1B55;--g-blue:#1B2F78}}
 :root[data-theme="dark"]{--bg:#0D0A2B;--alt:#140F3C;--card:#171244;--line:rgba(170,150,255,.20);--g-lav:#2A1F6B;--g-pink:#3F1B55;--g-blue:#1B2F78}
 body{background-image:radial-gradient(ellipse 60% 42% at 6% 100%,rgba(224,71,158,.18),transparent 70%),radial-gradient(ellipse 55% 45% at 98% 55%,rgba(110,130,255,.16),transparent 70%);background-attachment:fixed;position:relative}
-body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.20;background-image:radial-gradient(var(--dot) 1.1px,transparent 1.5px);background-size:13px 13px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body::before{opacity:.30}}
-:root[data-theme="dark"] body::before{opacity:.30}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) section.s.alt{background:linear-gradient(180deg,rgba(122,45,143,.22) 0%,rgba(36,26,92,.10) 100%)}}
 :root[data-theme="dark"] section.s.alt{background:linear-gradient(180deg,rgba(122,45,143,.22) 0%,rgba(36,26,92,.10) 100%)}
 
