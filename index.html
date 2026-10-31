@@ -146,26 +146,21 @@ a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 }
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
-<link rel="stylesheet" href="home.css?v=5">
+<link rel="stylesheet" href="home.css?v=6">
 <style>@media(min-width:880px){.demorow{grid-template-columns:1.15fr .85fr;gap:50px}}</style>
 </head>
 <body>
 <header class="dark top"><div class="in">
   <div class="nav"><a class="brand" href="index.html">Bellemark</a><nav class="pill" aria-label="Main"><a href="index.html" aria-current="page">Law firms</a><a href="trades.html">Local service</a><a href="compliance.html">Compliance</a><a href="demo.html">Live demo</a></nav><a class="tag" href="#book">Book a demo</a></div>
-  <div class="hero">
+  <div class="hero hero2">
     <div>
       <p class="forown">For law firms</p>
       <h1>Your phone gets answered, even when you are <em>in court.</em></h1>
       <p class="l">Bellemark builds an AI receptionist and lead system around your firm. Every call is picked up, urgent ones reach you right away, and new potential clients land in your pipeline instead of at the next firm.</p>
       <div class="acts"><a class="btn" href="#book">Book a demo</a><a class="btn ghost" href="demo.html">See the live demo</a><small>No cost. No commitment.</small></div>
     </div>
-    <div class="ba" id="ba" role="group" aria-label="Before and after: missed calls on the left, leads captured in the pipeline on the right. Drag the slider to compare.">
-      <div class="ba-l"><div class="ba-h"><span class="lbl">Your phone today</span><span class="cnt">6 missed calls</span></div><ul><li><i class="ic"></i><div><b>(404) 555 0182</b><span>Rang 6 times, no voicemail</span></div><time>2:47 PM</time></li><li><i class="ic"></i><div><b>(770) 555 0114</b><span>Hung up after the greeting</span></div><time>3:12 PM</time></li><li><i class="ic"></i><div><b>(678) 555 0163</b><span>No voicemail left</span></div><time>3:40 PM</time></li><li><i class="ic"></i><div><b>(404) 555 0127</b><span>Rang out, called the next firm</span></div><time>4:05 PM</time></li><li><i class="ic"></i><div><b>(470) 555 0191</b><span>Voicemail box full</span></div><time>4:31 PM</time></li><li><i class="ic"></i><div><b>(678) 555 0108</b><span>Hung up, no message</span></div><time>4:58 PM</time></li></ul><div class="ba-f">6 possible clients, gone.</div></div>
-      <div class="ba-r"><div class="ba-h"><span class="lbl">With Bellemark</span><span class="cnt live"><i></i>6 leads captured</span></div><ul><li><div><b>Dana Whitfield</b><span>Car accident, wants a lawyer</span></div><em class="tg u">Urgent</em><time>2:47 PM</time></li><li><div><b>Marcus Bell</b><span>DUI arrest last night</span></div><em class="tg u">Urgent</em><time>3:12 PM</time></li><li><div><b>Priya Shah</b><span>Divorce consultation</span></div><em class="tg n">New client</em><time>3:40 PM</time></li><li><div><b>Tom Reyes</b><span>Custody hearing next week</span></div><em class="tg u">Urgent</em><time>4:05 PM</time></li><li><div><b>Lena Ortiz</b><span>Immigration question</span></div><em class="tg n">New client</em><time>4:31 PM</time></li><li><div><b>Caleb Grant</b><span>Message for Attorney Hale</span></div><em class="tg m">Message</em><time>4:58 PM</time></li></ul><div class="ba-f">6 leads, each with an alert to you.</div></div>
-      <div class="ba-bar" aria-hidden="true"><span class="knob"><b>&#8249;</b><b>&#8250;</b></span></div>
-      <input class="ba-in" id="baIn" type="range" min="0" max="100" value="50" aria-label="Slide to compare missed calls with captured leads">
-    </div>
-    <p class="ba-note">Made up callers. Drag the slider.</p>
+    <div class="stage" id="stage" aria-hidden="true"><canvas id="pc"></canvas><div class="chip" id="schip"><i></i><span>Call comes in</span></div></div>
+
   </div>
 </div></header>
 
@@ -176,7 +171,28 @@ a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
   <div><b>You approve every word</b>Greeting, questions and call handling are set up with you before it goes live.</div>
 </div></div></div>
 
+<div class="marq" aria-hidden="true"><div class="mt"><span>Answered first</span><i></i><span>Urgent calls flagged</span><i></i><span>Leads in your pipeline</span><i></i><span>Nothing missed after hours</span><i></i><span>Answered first</span><i></i><span>Urgent calls flagged</span><i></i><span>Leads in your pipeline</span><i></i><span>Nothing missed after hours</span><i></i></div></div>
+
+<section class="s" id="compare"><div class="in"><p class="eye">Your phone, before and after</p><h2>Same calls. Different outcome.</h2>
+    <div class="ba" id="ba" role="group" aria-label="Before and after: missed calls on the left, leads captured in the pipeline on the right. Drag the slider to compare.">
+      <div class="ba-l"><div class="ba-h"><span class="lbl">Your phone today</span><span class="cnt">6 missed calls</span></div><ul><li><i class="ic"></i><div><b>(404) 555 0182</b><span>Rang 6 times, no voicemail</span></div><time>2:47 PM</time></li><li><i class="ic"></i><div><b>(770) 555 0114</b><span>Hung up after the greeting</span></div><time>3:12 PM</time></li><li><i class="ic"></i><div><b>(678) 555 0163</b><span>No voicemail left</span></div><time>3:40 PM</time></li><li><i class="ic"></i><div><b>(404) 555 0127</b><span>Rang out, called the next firm</span></div><time>4:05 PM</time></li><li><i class="ic"></i><div><b>(470) 555 0191</b><span>Voicemail box full</span></div><time>4:31 PM</time></li><li><i class="ic"></i><div><b>(678) 555 0108</b><span>Hung up, no message</span></div><time>4:58 PM</time></li></ul><div class="ba-f">6 possible clients, gone.</div></div>
+      <div class="ba-r"><div class="ba-h"><span class="lbl">With Bellemark</span><span class="cnt live"><i></i>6 leads captured</span></div><ul><li><div><b>Dana Whitfield</b><span>Car accident, wants a lawyer</span></div><em class="tg u">Urgent</em><time>2:47 PM</time></li><li><div><b>Marcus Bell</b><span>DUI arrest last night</span></div><em class="tg u">Urgent</em><time>3:12 PM</time></li><li><div><b>Priya Shah</b><span>Divorce consultation</span></div><em class="tg n">New client</em><time>3:40 PM</time></li><li><div><b>Tom Reyes</b><span>Custody hearing next week</span></div><em class="tg u">Urgent</em><time>4:05 PM</time></li><li><div><b>Lena Ortiz</b><span>Immigration question</span></div><em class="tg n">New client</em><time>4:31 PM</time></li><li><div><b>Caleb Grant</b><span>Message for Attorney Hale</span></div><em class="tg m">Message</em><time>4:58 PM</time></li></ul><div class="ba-f">6 leads, each with an alert to you.</div></div>
+      <div class="ba-bar" aria-hidden="true"><span class="knob"><b>&#8249;</b><b>&#8250;</b></span></div>
+      <input class="ba-in" id="baIn" type="range" min="0" max="100" value="50" aria-label="Slide to compare missed calls with captured leads">
+    </div>
+    <p class="ba-note">Made up callers. Drag the slider.</p>
+</div></section>
+
 <section class="flow" id="flow" aria-label="Examples of calls sorted into alerts and pipeline entries"><div class="fhead"><p class="eye">From a missed call to your pipeline</p><h2>Every call ends up somewhere you can see it.</h2><p>Each caller becomes an alert and a lead in your pipeline, sorted by urgency. Keep scrolling to watch them go by.</p></div><div class="lane" data-dir="1"><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>2:49 PM</span></div><b>Dana Whitfield</b><span class="d">Car accident, wants a lawyer</span></div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>9:12 AM</span></div><b>Marcus Reed</b><span class="d">DUI arrest last night, needs a consultation</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd m">MESSAGE</span><span>4:40 PM</span></div><b>Priya Nair</b><span class="d">Asked Ms. Hollis to call about her custody hearing</span></div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>11:05 PM</span></div><b>Tom Ellison</b><span class="d">Arrested, family calling for a bail attorney</span></div><div class="fc ok"><i></i>Alert sent to your inbox</div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>6:30 PM</span></div><b>Janelle Brooks</b><span class="d">Slip and fall at a grocery store</span></div><div class="fc"><div class="fl"><span class="bd m">MESSAGE</span><span>8:15 AM</span></div><b>Greg Alvarez</b><span class="d">Following up on his estate documents</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>7:02 PM</span></div><b>Samira Khan</b><span class="d">Wants help with a divorce filing</span></div></div><div class="lane" data-dir="-1"><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>11:05 PM</span></div><b>Tom Ellison</b><span class="d">Arrested, family calling for a bail attorney</span></div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>6:30 PM</span></div><b>Janelle Brooks</b><span class="d">Slip and fall at a grocery store</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd m">MESSAGE</span><span>8:15 AM</span></div><b>Greg Alvarez</b><span class="d">Following up on his estate documents</span></div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>7:02 PM</span></div><b>Samira Khan</b><span class="d">Wants help with a divorce filing</span></div><div class="fc ok"><i></i>Alert sent to your inbox</div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>1:20 AM</span></div><b>Luis Ortega</b><span class="d">Workplace injury, hospital this morning</span></div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>2:49 PM</span></div><b>Dana Whitfield</b><span class="d">Car accident, wants a lawyer</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>9:12 AM</span></div><b>Marcus Reed</b><span class="d">DUI arrest last night, needs a consultation</span></div></div><div class="lane" data-dir="1"><div class="fc"><div class="fl"><span class="bd m">MESSAGE</span><span>8:15 AM</span></div><b>Greg Alvarez</b><span class="d">Following up on his estate documents</span></div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>7:02 PM</span></div><b>Samira Khan</b><span class="d">Wants help with a divorce filing</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>1:20 AM</span></div><b>Luis Ortega</b><span class="d">Workplace injury, hospital this morning</span></div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>2:49 PM</span></div><b>Dana Whitfield</b><span class="d">Car accident, wants a lawyer</span></div><div class="fc ok"><i></i>Alert sent to your inbox</div><div class="fc"><div class="fl"><span class="bd n">NEW CLIENT</span><span>9:12 AM</span></div><b>Marcus Reed</b><span class="d">DUI arrest last night, needs a consultation</span></div><div class="fc"><div class="fl"><span class="bd m">MESSAGE</span><span>4:40 PM</span></div><b>Priya Nair</b><span class="d">Asked Ms. Hollis to call about her custody hearing</span></div><div class="fc ok"><i></i>Added to your pipeline</div><div class="fc"><div class="fl"><span class="bd u">URGENT</span><span>11:05 PM</span></div><b>Tom Ellison</b><span class="d">Arrested, family calling for a bail attorney</span></div></div><p class="fnote">Made up callers for illustration.</p></section>
+
+<section class="s ways" id="ways"><div class="in">
+  <p class="eye">What you get</p><h2>Four ways it works for your firm.</h2>
+  <div class="wgrid" id="wgrid">
+    <article class="w on" tabindex="0"><span class="n">01</span><h3>AI receptionist</h3><p>Picks up every call, day or night. Gets the name, number and reason, and says it is an automated assistant.</p><ul><li>Greeting you approve</li><li>Questions you choose</li><li>No legal advice, ever</li></ul></article>
+    <article class="w" tabindex="0"><span class="n">02</span><h3>Instant alerts</h3><p>Urgent calls reach you right away. Everything else arrives as a clean email within minutes.</p><ul><li>Urgent flagged in the subject</li><li>Who, why and how to reach them</li><li>Sent to whoever you pick</li></ul></article>
+    <article class="w" tabindex="0"><span class="n">03</span><h3>Lead pipeline</h3><p>Every caller is saved as a lead and sorted by type, so nobody falls through the cracks.</p><ul><li>New, urgent, message</li><li>One place to follow up</li><li>Nothing to copy by hand</li></ul></article>
+    <article class="w" tabindex="0"><span class="n">04</span><h3>Website chat assistant</h3><p>Visitors who would rather type than call get answered too, and land in the same pipeline.</p><ul><li>Trained on your firm</li><li>Collects contact details</li><li>Same alerts as calls</li></ul></article>
+  </div></div></section>
 
 <section class="s" id="sorting"><div class="in">
   <p class="eye">How every call is handled</p>
@@ -297,6 +313,9 @@ a{color:inherit}:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
   </div>
 </div></section>
 
+<section class="proc" id="process"><div class="in"><p class="eye">How it starts</p><h2>Built with you, then looked after.</h2>
+  <ol class="steps"><li><b>01</b><h3>We set it up with you</h3><p>Greeting, questions and call handling, approved by you before anything goes live.</p></li><li><b>02</b><h3>It goes live</h3><p>Your calls and chat are answered, sorted and sent to you.</p></li><li><b>03</b><h3>We look after it</h3><p>Changes and fixes stay with us, so you can get back to your clients.</p></li></ol></div></section>
+
 <section class="s faq"><div class="in">
   <p class="eye">Questions</p>
   <h2>Quick answers.</h2>
@@ -368,6 +387,7 @@ if(book)new IntersectionObserver(function(e){b=e[0].isIntersecting;up()}).observ
 })();
 </script>
 <script src="flow.js?v=1" defer></script>
+<script src="stage.js?v=1" defer></script>
 <script src="https://widgets.leadconnectorhq.com/loader.js" data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js" data-widget-id="6ae52caacc650fb2f4a040c7"></script>
 </body>
 </html>

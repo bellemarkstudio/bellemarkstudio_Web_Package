@@ -308,3 +308,43 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 /* v6: use wide screens */
 @media (min-width:1280px){.in,.flow .fhead,.flow .fnote{max-width:1360px}.ba,.phone.wide{max-width:1240px}}
 @media (min-width:1700px){.in,.flow .fhead,.flow .fnote{max-width:1500px}.ba,.phone.wide{max-width:1360px}}
+
+/* v7: potadot style hero stage, marquee, ways, process */
+@media (min-width:980px){
+ .hero.hero2{grid-template-columns:1.05fr .95fr!important;justify-items:stretch;text-align:left;gap:30px!important;padding-block:40px 80px;align-items:center}
+ .hero2>div:first-child{align-items:flex-start}
+ .hero2 h1{margin-inline:0}.hero2 p.l{margin-inline:0}.hero2 .acts{justify-content:flex-start}
+}
+.stage{position:relative;width:100%;aspect-ratio:1/1;max-width:560px;margin-inline:auto}
+.stage canvas{width:100%;height:100%;display:block}
+.stage .chip{position:absolute;left:50%;bottom:-6%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;padding:10px 18px;border-radius:999px;background:var(--hglass);border:1px solid var(--hline);backdrop-filter:blur(10px);font-weight:700;font-size:.86rem;color:var(--hi);white-space:nowrap}
+.stage .chip i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.22)}
+@media (max-width:979px){.stage{max-width:380px}}
+#compare{padding-top:70px}#compare .ba{margin-inline:auto}#compare h2{margin:6px 0 28px}
+.marq{overflow:hidden;border-block:1px solid var(--line);padding:18px 0;background:rgba(122,45,143,.10)}
+.marq .mt{display:flex;align-items:center;gap:34px;width:max-content;animation:mq 38s linear infinite}
+.marq span{font-size:clamp(1.3rem,3vw,2.1rem);font-weight:700;letter-spacing:-.02em;color:var(--ink);white-space:nowrap}
+.marq i{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--accent1),var(--accent2));flex:none}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marq .mt{animation:none}}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:30px}
+.w{position:relative;border:1px solid var(--line);border-radius:22px;padding:26px 22px;background:var(--card);transition:transform .35s,background .35s,box-shadow .35s;outline:none}
+.w .n{display:block;font-size:.78rem;font-weight:800;letter-spacing:.14em;color:var(--accent1);margin-bottom:34px}
+.w h3{margin:0 0 10px;font-size:1.25rem;letter-spacing:-.01em}
+.w p{margin:0 0 16px;color:var(--muted);font-size:.95rem;line-height:1.55}
+.w ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:.88rem;color:var(--ink)}
+.w li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent2);margin-right:9px}
+.w.on,.w:hover,.w:focus-visible{background:linear-gradient(160deg,#3B1F77,#1B2F78);color:#fff;transform:translateY(-6px);box-shadow:0 26px 60px rgba(70,50,170,.4)}
+.w.on p,.w:hover p,.w:focus-visible p,.w.on li,.w:hover li,.w:focus-visible li{color:#E4E9FF}
+.w.on h3,.w:hover h3,.w:focus-visible h3{color:#fff}
+.wgrid:hover .w.on:not(:hover){background:var(--card);color:inherit;transform:none;box-shadow:none}
+.wgrid:hover .w.on:not(:hover) p{color:var(--muted)}.wgrid:hover .w.on:not(:hover) li{color:var(--ink)}.wgrid:hover .w.on:not(:hover) h3{color:var(--ink)}
+@media (max-width:979px){.wgrid{grid-template-columns:1fr 1fr}}@media (max-width:560px){.wgrid{grid-template-columns:1fr}}
+.proc{padding:80px 0;background:linear-gradient(180deg,#1A1250,#120D36);color:#fff;margin-block:30px}
+.proc .eye{color:#FF8AC8}.proc h2{color:#fff;margin:6px 0 40px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:26px;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:19px;height:1px;background:linear-gradient(90deg,rgba(255,138,200,.6),rgba(143,180,255,.6))}
+.steps b{position:relative;display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;background:#120D36;border:1px solid rgba(255,255,255,.35);font-size:.8rem;margin-bottom:18px}
+.steps h3{margin:0 0 8px;color:#fff;font-size:1.15rem}.steps p{margin:0;color:#C9D2F5;font-size:.95rem;line-height:1.55;max-width:34ch}
+@media (max-width:760px){.steps{grid-template-columns:1fr}.steps::before{display:none}}
+@media (min-width:980px){.hero2 .acts small{text-align:left}.stage{margin-bottom:24px}}
