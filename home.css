@@ -304,3 +304,7 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 .flow .fc.ok i{width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
 .flow .fnote{max-width:1120px;margin:10px auto 0;padding:0 24px;font-size:.8rem;color:var(--muted)}
 @media (min-width:901px) and (hover:hover) and (prefers-reduced-motion:no-preference){.flow{display:block}}
+
+/* v6: use wide screens */
+@media (min-width:1280px){.in,.flow .fhead,.flow .fnote{max-width:1360px}.ba,.phone.wide{max-width:1240px}}
+@media (min-width:1700px){.in,.flow .fhead,.flow .fnote{max-width:1500px}.ba,.phone.wide{max-width:1360px}}
