@@ -409,3 +409,6 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 .hban .btn{white-space:nowrap}
 /* v14: mobile nav wraps instead of running off the screen */
 @media(max-width:760px){.pill{flex-wrap:wrap;gap:2px;border-radius:26px;padding:6px}.pill a{padding:8px 13px}}
+/* v15: step text on light sections was inheriting the dark band color */
+.steps .step p{color:var(--muted)}
+.steps .step h4{color:var(--ink)}
