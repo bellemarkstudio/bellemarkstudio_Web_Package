@@ -392,3 +392,18 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 .erow small,.edone small{display:block;color:var(--muted);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}.erow b,.edone b{color:var(--ink);font-size:1rem}
 .edone.on .eic{background:#22c55e;border-color:#22c55e}.edone.on .eic svg{stroke:#fff}
 @media(max-width:899px){.fstage{grid-template-columns:1fr;gap:26px;min-height:0}.fleft{height:500px;margin-bottom:10px}.fpaper{inset:0 20px 0 0}.fpaper h3{font-size:2.4rem}.fpaper dl{grid-template-columns:70px 1fr;font-size:.82rem}.erow,.edone{opacity:1;transform:none}.hl{border-color:#FF5A8E}}
+/* v13: holiday bar, progress, banner */
+.ann{position:sticky;top:0;z-index:70;display:flex;justify-content:center;align-items:center;gap:6px 14px;flex-wrap:wrap;padding:9px 16px;background:linear-gradient(90deg,#FF5FA8,#7C6CFF 55%,#3B82F6);color:#fff;text-decoration:none;font-size:.84rem;line-height:1.35;text-align:center}
+.ann b{font-family:var(--head);font-weight:900;letter-spacing:.06em;text-transform:uppercase;font-size:.68rem;background:rgba(255,255,255,.22);padding:3px 10px;border-radius:999px}
+.ann em{font-style:normal;font-variant-numeric:tabular-nums;font-weight:800}
+.ann u{text-underline-offset:3px;font-weight:600}
+.ann:hover u{text-decoration-thickness:2px}
+.ann[hidden]{display:none}
+.sp{position:fixed;left:0;top:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#FF8AC8,#8FB4FF);z-index:80;pointer-events:none}
+@media(max-width:560px){.ann{font-size:.76rem;padding:8px 12px}.ann .hs{display:none}}
+.hban{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px 24px;margin:0 0 30px;padding:20px 24px;border-radius:18px;background:linear-gradient(110deg,#FFE3F1,#E4E8FF);border:1px solid rgba(224,71,158,.28);box-shadow:0 14px 40px rgba(224,71,158,.12)}
+.hban[hidden]{display:none}
+.hban h3{font-size:1.2rem;font-weight:900;margin:0;color:#14173D}
+.hban p{margin:6px 0 0;color:#4B5470;font-size:.95rem}
+.hban .cdm{font-variant-numeric:tabular-nums;font-weight:800;color:#9B1F63}
+.hban .btn{white-space:nowrap}
