@@ -407,3 +407,5 @@ header.top::before{-webkit-mask-image:radial-gradient(circle 170px at var(--mx,-
 .hban p{margin:6px 0 0;color:#4B5470;font-size:.95rem}
 .hban .cdm{font-variant-numeric:tabular-nums;font-weight:800;color:#9B1F63}
 .hban .btn{white-space:nowrap}
+/* v14: mobile nav wraps instead of running off the screen */
+@media(max-width:760px){.pill{flex-wrap:wrap;gap:2px;border-radius:26px;padding:6px}.pill a{padding:8px 13px}}
